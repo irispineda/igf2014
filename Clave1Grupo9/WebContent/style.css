@@ -21,7 +21,7 @@ h3 {font-size:1.2em;margin:2px 0 8px 0}
 #header h1 a:hover {color:#e99e55}
 #slogan {color:#20526a;margin:15px 0 0 45px;font-size:1.6em;letter-spacing:-1px}
 /* Sitemenu, left sidebar */
-#sitemenu {clear:both;float:left;width:135px;margin:0;padding:20px 0 0 15px}
+#sitemenu {clear:both;float:left;width:150px;margin:0;padding:20px 0 0 15px;}
 #sitemenu ul {list-style:none;width:135px;margin:0 0 20px 0;padding:0;font-size:1.2em;letter-spacing:-1px}
 #sitemenu li {margin-bottom:4px}
 #sitemenu li a {font-weight:bold;text-decoration:none;color:#20526a;display:block;height:1.1em;padding:2px 2px 2px 8px;border-left: 8px solid #70a2ba}
@@ -31,16 +31,8 @@ h3 {font-size:1.2em;margin:2px 0 8px 0}
 #sitemenu ul ul li {margin-bottom:2px}
 #sitemenu ul ul li a {border:0;padding:2px}
 #sitemenu ul ul li a:hover {border:0;padding:2px;text-decoration:underline}
-/* Extras, right sitebar */
-#extras {float:right;width:135px;margin:0;padding:10px 15px 0 0}
-#extras ul {margin:0 0 14px 2px;list-style:none;color:#808080}
-#extras li {margin:0 0 2px 0}
-#extras li a {padding:2px 2px 2px 2px;height:1.2em;letter-spacing:-1px;font-weight:bold}
-#extras li a:hover {color:#d88d44}
-#extras ul ul, #extras ul ul ul {font-size:0.9em;line-height:1.2em;margin:2px 0 2px 15px}
-#extras ul ul a, #extras ul ul ul a {font-weight:normal}
 /* Content variations */
-#content {margin:5px 170px 0 170px;padding:2px 0 0 0;line-height:1.5em;text-align:left}
+#content {margin:5px 170px 0 170px;padding:2px 0 0 0;line-height:1.5em;text-align:left;overflow: scroll;height:300px;width:580px}
 #content h2 {font-size:1.6em;margin:20px 0 10px 0}
 #content h3 {font-size:1.4em;font-weight:normal;letter-spacing:-1px;margin:10px 0 8px 0}
 #content p {text-align:justify}
@@ -67,3 +59,18 @@ caption{font-size:16px;color:#20526a;font-weight:bold}
 .icondel{content:url(images/del.jpg); width: 15px;height: 15px;}
 .iconview{content:url(images/view.jpg); width: 15px;height: 15px;}
 .iconedit{content:url(images/edit.jpg); width: 15px;height: 15px;}
+/* Login */
+#login {position:absolute; top:175px; float:left; width:750px; height:310px;}/*border:3px solid Red;*/
+#login_outer {overflow:hidden;text-align:center;margin:auto;}
+#login_inner {display:inline-table;height:100px;width:100px;margin:0px;font-weight:bold;color:#20526a;padding:5px;}
+#login input {border: none;font-family: inherit;font-size: inherit;font-weight: inherit;line-height: inherit;-webkit-appearance: none;}
+#login h2 {background-color: #404053;-webkit-border-radius: 20px 20px 0 0;-moz-border-radius: 20px 20px 0 0;border-radius: 20px 20px 0 0;color: #fff;font-size: 28px;padding: 20px 26px;}
+#login fieldset {background-color: #fff;-webkit-border-radius: 0 0 20px 20px;-moz-border-radius: 0 0 20px 20px;border-radius: 0 0 20px 20px;padding: 20px 26px;}
+#login fieldset p {color: #20526a;margin-bottom: 14px;}
+#login fieldset p:last-child {margin-bottom: 0;}
+#login fieldset input {-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;}
+#login fieldset input[type="email"], #login fieldset input[type="password"] {background-color: #eee;color: #d88d44;padding: 4px 10px;width: 328px;}
+/*#login fieldset input[type="email"], #login fieldset input[type="password"] {background-color: #eee;color: #404053;padding: 4px 10px;width: 328px;}*/
+#login fieldset input[type="submit"] {background-color: #404053;color: #fff;display: block;margin: 0 auto;padding: 4px 0;width: 100px;}
+#login fieldset input[type="submit"]:hover {background-color: #d88d44;}
+.iconlock{content:url(images/lock.jpg); width: 25px;height: 25px;}

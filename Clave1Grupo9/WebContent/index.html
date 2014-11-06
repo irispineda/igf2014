@@ -4,20 +4,6 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="style.css" media="screen,projection" />
 	<script type="text/javascript" src="jquery-1.7.2.js"></script>
-	<script type="text/javascript">
-		function cargaPagina(href){
-			alert("llego aqui 2");
-			alert(href);
-			$('#content').load(href);
-			/*$(document).ready(function(){
-				$("a").on("click", function(event){
-					event.preventDefault();
-					alert(this.href);
-					$('#content').load(this.href);
-				});
-			});*/
-		}
-    </script>
 	<title>UES-IGF115-Clave1-Grupo9-2014</title>
 </head>
 <body>
@@ -32,13 +18,13 @@
 	<div id="sitemenu">
 		<h2 class="hide">Sample menu:</h2>
 		<ul>
-			<li><a class="current" href="#">Inicio</a></li>
+			<li><a class="current" href="#" onclick="javascript:anchodiv();">Inicio</a></li>
 			<li>
 				<a href="#">Catalogos</a>
 				<ul>
 					<li><a href="#">Tipo de Cliente</a></li>
 					<li><a href="#">Establecimiento</a></li>
-					<li><a href="#">Pais</a></li>
+					<li><a href="#" onclick="cargaPagina();">Pais</a></li>
 					<li><a href="./Concepto/Lista.jsp">Concepto</a></li>
 				</ul>
 			</li>
@@ -60,8 +46,6 @@
 			<li class="hide"><a href="#header">Back to top</a></li>
 		</ul>
 	</div>
-	<div id="extras">
-	</div>
 	<div id="content">
 	</div>
 	<div id="footer">
@@ -70,6 +54,25 @@
 			<div class="fright"><p>Clave 1</p></div>
 			<div class="fcenter"><p>Grupo 9</p></div>
 		</div>
+	</div>
+	
+	<div id="login">
+		
+		<div id="login_outer">
+			<div id="login_inner">
+				<h2><img class="iconlock"></span>    Entrar</h2>
+				<form action="javascript:void(0);" method="POST">
+					<fieldset>
+						<p><label for="email">Usuario</label></p>
+						<p><input type="email" id="email" value="mail@address.com" onBlur="if(this.value=='')this.value='mail@address.com'" onFocus="if(this.value=='mail@address.com')this.value=''"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+						<p><label for="password">Password</label></p>
+						<p><input type="password" id="password" value="password" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')this.value=''"></p> <!-- JS because of IE support; better: placeholder="password" -->
+						<p><input type="submit" value="Entrar"></p>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		
 	</div>
 </div>
 </body>
