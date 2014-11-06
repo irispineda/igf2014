@@ -1,27 +1,59 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page import="org.sv.ues.igf.controlador.ConceptoCtrl" %>
+<%@ page import="org.sv.ues.igf.entidades.Concepto" %>
+<%@ page import="java.util.*" %>
 <%
-	String mensaje;
+	ConceptoCtrl ctrl = new ConceptoCtrl();
+	Concepto alumno = new Concepto();
+	List lst = null;
+	
+	String accion = request.getParameter("accion");
+	if (accion == null)
+		lst = ctrl.findByAll();
+	/*else{
+		lst = ctrl.findByParam(request.getParameter("nombre1"),
+											request.getParameter("nombre2"),
+											request.getParameter("apellido1"),
+											request.getParameter("apellido2"),
+											request.getParameter("genero"),
+											request.getParameter("grado"));
+	}*/
+	
+	String mensaje = "";
+	
+	mensaje = "<table>"+
+			  	"<thead>"+
+					"<caption>Conceptos <a href='Edit.jsp?idconcepto=0&accion=nuevo'><img class='iconnew' ></a></caption>"+
+					"<tr>"+
+						"<th>C&oacute;digo</th>"+
+						"<th>Descripci&oacute;n</th>"+
+					"</tr>"+
+				"</thead>"+
+				"<tbody>";
+	if(lst.isEmpty()){
+		mensaje += "<tr><td colspan=5>No hay registros</td></tr>";
+	}else{
+		Concepto concepto;
+		for(int i=0;i<lst.size();i++){
+			concepto = (Concepto) lst.get(i); 
+			mensaje += "<tr>"+
+							"<td>"+concepto.getIdconcepto()+"</td>"+
+							"<td>"+concepto.getDescripcion()+"</td>"+
+							"<td><a href='Edit.jsp?idconcepto="+concepto.getIdconcepto()+"&accion=ver'><img class='iconview' ></a></td>"+
+							"<td><a href='Edit.jsp?idconcepto="+concepto.getIdconcepto()+"&accion=edit'><img class='iconedit' ></a></td>"+
+							"<td><a href='Edit.jsp?idconcepto="+concepto.getIdconcepto()+"&accion=borrar'><img class='icondel' ></a></td>"+
+						"</tr>"; 
+		}
+	}
+	mensaje += "</tbody>"+
+			   "</table>";
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="../style.css" media="screen,projection" />
-	<script type="text/javascript" src="jquery-1.7.2.js"></script>
-	<script type="text/javascript">
-		function cargaPagina(href){
-			alert("llego aqui 2");
-			alert(href);
-			$('#content').load(href);
-			/*$(document).ready(function(){
-				$("a").on("click", function(event){
-					event.preventDefault();
-					alert(this.href);
-					$('#content').load(this.href);
-				});
-			});*/
-		}
-    </script>
+	
 	<title>UES-IGF115-Clave1-Grupo9-2014</title>
 </head>
 <body>
@@ -67,24 +99,7 @@
 	<div id="extras">
 	</div>
 	<div id="content">
-		<table>
-			<thead>
-				<caption>Conceptos <a href="Edit.jsp"><img src="../images/new.jpg" class="icon" width="20px" height="20px"></a></caption>
-				<tr>
-					<th>C&oacute;digo</th>
-					<th>Descripci&oacute;n</th>
-				</tr>
-			</thead>
-			<tbody>
-			<tr>
-				<td>1</td>
-				<td>Compra en Centro Comercial La Gran Via</td>
-				<td><a href="Edit.jsp?accion=ver&idconcepto="><img src="../images/view.jpg" class="icon" width="20px" height="20px"></a></td>
-				<td><a href="Edit.jsp?accion=edit&idconcepto="><img src="../images/edit.jpg" class="icon" width="20px" height="20px"></a></td>
-				<td><a href="Edit.jsp?accion=borrar&idconcepto="><img src="../images/del.jpg" class="icon" width="20px" height="20px"></a></td>
-			</tr>
-			</tbody>
-		</table>
+		<%=mensaje %>
 	</div>
 	<div id="footer">
 		<div class="fcenter">
