@@ -22,6 +22,10 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "transaccion", catalog = "clave1")
+@NamedQueries({
+	@NamedQuery(name = "Transaccion.findByAll", query = "SELECT t FROM Transaccion t "),
+	@NamedQuery(name = "Transaccion.findByIdTransaccion", query = "SELECT t FROM Transaccion t WHERE idtransaccion = :id")
+})
 public class Transaccion implements java.io.Serializable {
 
 	private Integer idtransaccion;
