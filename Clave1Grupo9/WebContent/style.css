@@ -61,3 +61,9 @@ h3 {font-size:1.2em;margin:2px 0 8px 0}
 .bold {font-weight:bold}
 .clear {clear:both}
 .hide {display:none}
+#footer {clear:both;margin:5px auto;padding:10px 0;width:760px;text-align:center;background: url(images/footer.jpg) bottom left no-repeat;color:#555;font-size:0.9em;line-height:1.5em}
+caption{font-size:16px;color:#20526a;font-weight:bold}
+.iconnew{content:url(images/new.jpg); width: 15px;height: 15px;}
+.icondel{content:url(images/del.jpg); width: 15px;height: 15px;}
+.iconview{content:url(images/view.jpg); width: 15px;height: 15px;}
+.iconedit{content:url(images/edit.jpg); width: 15px;height: 15px;}
