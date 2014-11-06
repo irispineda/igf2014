@@ -42,6 +42,16 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="../style.css" media="screen,projection" />
+	<link rel="stylesheet" type="text/css" href="../js/jquery-ui-1.11.2/jquery-ui.css" media="screen,projection" />
+	<script src="../js/jquery-ui-1.11.2/external/jquery/jquery.js"></script>
+	<script src="../js/jquery-ui-1.11.2/jquery-ui.js"></script>
+	<script language="javascript">
+		$(function() {
+			$( "#datepicker1" ).datepicker();
+			$( "#datepicker2" ).datepicker();
+			$( "#datepicker3" ).datepicker();
+		});
+	</script>
 	<title>UES-IGF115-Clave1-Grupo9-2014</title>
 </head>
 <body>
@@ -101,9 +111,9 @@
 					</tr>
 					<tr>
 						<td>Fecha de transacci&oacute;n</td>
-						<td><input type="text" name="fecha_transaccion" value="" /></td>
+						<td><input type="text" id="datepicker1" name="fecha_transaccion" value="" /></td>
 						<td>Fecha de aplicaci&oacute;n</td>
-						<td><input type="text" name="fecha_aplicada" value="" /></td>
+						<td><input type="text" id="datepicker2" name="fecha_aplicada" value="" /></td>
 						<td>Monto de transacci&oacute;n</td>
 						<td><input type="text" name="monto_transaccion" value="" /></td>
 					</tr>
@@ -127,7 +137,7 @@
 					</tr>
 					<tr>
 						<td>Fecha de vencimiento</td>
-						<td><input type="text" name="fecha_limite_pago" value="" /></td>
+						<td><input type="text" id="datepicker3" name="fecha_limite_pago" value="" /></td>
 					</tr>
 					<tr>
 						<td>Pais</td>
