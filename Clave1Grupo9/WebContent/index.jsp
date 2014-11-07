@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ page import="org.sv.ues.igf.controlador.ConceptoCtrl" %>
-<%@ page import="org.sv.ues.igf.entidades.Concepto" %>
+<%@ page import="org.sv.ues.igf.controlador.UsuariosCtrl" %>
+<%@ page import="org.sv.ues.igf.entidades.Usuarios" %>
 <%
 	//evaluar q esta haciendo
 	
@@ -27,6 +27,27 @@
 	        			"</div>";
         }else{
         	//validar que sea un usuario y password valido
+        	UsuariosCtrl ctrl = new UsuariosCtrl();
+        	if(ctrl.validaUsuario(usuario,pwd)){
+        		session.setAttribute("usuario",usuario);
+        	}else{
+        		divLogin =  "<div id='login'>"+
+		        			"	<div id='login_outer'>"+
+		        			"		<div id='login_inner'>"+
+		        			"			<h2><img class='iconlock'></span>    Entrar</h2>"+
+		        			"			<form action='index.jsp' method='post'>"+
+		        			"				<fieldset>"+
+		        			"					<p><label for='email'>Usuario</label></p>"+
+		        			"					<p><input type='email' id='email' value='mail@address.com' name='usuario'></p>"+
+		        			"					<p><label for='password'>Password</label></p>"+
+		        			"					<p><input type='password' id='password' value='password' name='password'></p>"+
+		        			"					<p><input type='submit' value='Entrar'></p>"+
+		        			"				</fieldset>"+
+		        			"			</form>"+
+		        			"		</div>"+
+		        			"	</div>"+
+		        			"</div>";
+        	}
         }
     }	
 %>
