@@ -26,4 +26,10 @@ public class UsuariosCtrl {
 		List lst = dao.findByAll();
 		return lst;
 	}
+	
+	public Boolean validaUsuario(String usuario, String password){
+		Usuarios usuarios = dao.findByUsuarioPassword(usuario, password);
+		if (usuarios==null) return false;
+		return true;
+	}
 }

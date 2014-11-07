@@ -52,11 +52,22 @@ public class UsuariosDAO {
 	}
 	
 	private Usuarios findByIdUsuarios(int ident){
-		Query query = s.getNamedQuery("Usuarios.findByIdUsuarios");
+		Query query = s.getNamedQuery("Usuarios.findById");
 		query.setParameter("id",ident);
 		Usuarios usuarios = (Usuarios) query.uniqueResult();
 		return usuarios;
 	}
+	
+	public Usuarios findByUsuarioPassword(String usuario, String password){
+		iniciarSesion();
+		Query query = s.getNamedQuery("Usuarios.findByUsuarioPassword");
+		query.setParameter("email",usuario);
+		query.setParameter("pass",password);
+		Usuarios usuarios = (Usuarios) query.uniqueResult();
+		finSesion();
+		return usuarios;
+	}
+	
 	
 	private void iniciarTransaccion(){
 		sf = hu.getSf();
