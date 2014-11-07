@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ page import="org.sv.ues.igf.controlador.TransaccionCtrl" %>
-<%@ page import="org.sv.ues.igf.entidades.Transaccion" %>
+<%@ page import="org.sv.ues.igf.controlador.*" %>
+<%@ page import="org.sv.ues.igf.entidades.*" %>
+<%@ page import="org.sv.ues.igf.utilidades.Conversiones" %>
+
+<%@ page import="java.util.*" %>
+<%@ page import="java.math.BigDecimal" %>
 
 <%
 	Transaccion transaccion = new Transaccion();
@@ -14,15 +18,45 @@
 	if (request.getParameter("idtransaccion") == null) ident = 0;
 	else ident = Integer.parseInt(request.getParameter("idtransaccion"));
 	
+	Integer idPais = Integer.parseInt(request.getParameter("idPais"));
+	Conversiones conversion = new Conversiones();
+	
+	Pais pais = new Pais();
+	//aqui obtener la clase pais
+	
+	Date fechaVencimiento = conversion.stringToDate(request.getParameter("fechaVencimiento"));
+	Clientetarjetaestado clientetarjetaestado = new Clientetarjetaestado();
+	//aqui obtener la clase clientetarjetaestado  (idtarjetacredito,idcliente,fecha_limite_pago)
+	
+	Integer idConcepto = Integer.parseInt(request.getParameter("idConcepto"));
+	Concepto concepto = new Concepto();
+	//aqui obtener la clase concepto
+	
+	Integer idTarjetacredito = Integer.parseInt(request.getParameter("idTarjetacredito"));
+	Tarjetacredito tarjetacredito = new Tarjetacredito();
+	//aqui obtener la clase tarjetacredito 
+	
+	Integer idCliente = Integer.parseInt(request.getParameter("idCliente"));
+	Cliente cliente = new Cliente();
+	//aqui obtener la clase cliente
+	
+	Date fechaTransaccion = conversion.stringToDate(request.getParameter("fechaTransaccion"));
+	Date fechaAplicada = conversion.stringToDate(request.getParameter("fechaAplicada"));
+	BigDecimal montoTransaccion = conversion.stringToBigDecimal(request.getParameter("montoTransaccion"));
+	String BCargo = request.getParameter("BCargo");
+	String BAbono = request.getParameter("BAbono");
+	
 	if (ident == 0) {
 		transaccion = new Transaccion();
 	} else {
 		transaccion = ctrl.findById(ident);
 	}
 	
+	String conceptos="";
 	if (accion.equals("guardar")){
-		transaccion.setDescripcion(request.getParameter("descripcion"));
 		if (ident != 0) transaccion.setIdtransaccion(ident);
+		transaccion = new Transaccion(pais,clientetarjetaestado,concepto,tarjetacredito,cliente,
+									  fechaTransaccion,fechaAplicada,montoTransaccion,BCargo,BAbono);
 		ctrl.guardar(transaccion);
 		response.sendRedirect("Lista.jsp");
 	}else if (accion.equals("borrar")) {
@@ -31,6 +65,13 @@
 		response.sendRedirect("Lista.jsp");
 	} else if (accion.equals("ver")) {
 		disable = "disabled";
+	}else if(accion.equals("nuevo")|| accion.equals("edit")){
+		ConceptoCtrl conceptoCtrl = new ConceptoCtrl();
+		List conceptoLst = conceptoCtrl.findByAll();
+		for(int i=0;i<conceptoLst.size();i++){
+			concepto = (Concepto) conceptoLst.get(i); 
+			conceptos += "<option value="+concepto.getIdconcepto()+">"+concepto.getDescripcion()+"</option>"; 
+		}
 	}
 	System.out.println("aqui");
 	System.out.println(transaccion.getIdtransaccion());
@@ -107,49 +148,46 @@
 				<tbody>
 					<tr>
 						<td>C&oacute;digo</td>
-						<td><input type="text" value="<%=transaccion.getIdtransaccion()%>" disabled /></td>
-					</tr>
-					<tr>
-						<td>Fecha de transacci&oacute;n</td>
-						<td><input type="text" id="datepicker1" name="fecha_transaccion" value="" /></td>
-						<td>Fecha de aplicaci&oacute;n</td>
-						<td><input type="text" id="datepicker2" name="fecha_aplicada" value="" /></td>
-						<td>Monto de transacci&oacute;n</td>
-						<td><input type="text" name="monto_transaccion" value="" /></td>
-					</tr>
-					<tr>
-						<td>Concepto</td>
-						<td><select name="idconcepto">
-							</select>
-						</td>
+						<td colspan=3><input type="text" value="<%=transaccion.getIdtransaccion()%>" disabled size=5 /></td>
 					</tr>
 					<tr>
 						<td>No. de Tarjeta</td>
-						<td><select name="idtarjetacredito">
-							</select>
+						<td colspan=3><select name="idtarjetacredito" style="width:213px"><%=conceptos%></select>
 						</td>
 					</tr>
 					<tr>
 						<td>Cliente</td>
-						<td><select name="idcliente">
-							</select>
+						<td colspan=3><select name="idcliente" style="width:213px"><%=conceptos%></select>
 						</td>
 					</tr>
 					<tr>
-						<td>Fecha de vencimiento</td>
-						<td><input type="text" id="datepicker3" name="fecha_limite_pago" value="" /></td>
+						<td>Fecha</td>
+						<td><input type="text" id="datepicker1" name="fecha_transaccion" value="" size=5 /></td>
+						<td>Monto</td>
+						<td><input type="text" name="monto_transaccion" value="" size=5 /></td>
+					</tr>
+					<tr>
+						<td>Concepto</td>
+						<td colspan=3><select name="idconcepto" style="width:213px"><%=conceptos%></select>
+						</td>
+					</tr>
+					<tr>
+						<td>Aplicaci&oacute;n</td>
+						<td><input type="text" id="datepicker2" name="fecha_aplicada" value="" size=5 /></td>
+						<td>Vencimiento</td>
+						<td><input type="text" id="datepicker3" name="fecha_limite_pago" value="" size=5 /></td>
 					</tr>
 					<tr>
 						<td>Pais</td>
-						<td><input type="text" name="idpais" value="" /></td>
+						<td colspan=3><select name="idpais" style="width:213px"><%=conceptos%></select></td>
 					</tr>
 					<tr>
-						<td>Tipo de movimiento</td>
-						<td><input type="radio" name="b_cargo" value="S"  />Cargo</td>
-						<td><input type="radio" name="b_abono" value="S"  />Abono</td>
+						<td>Tipo</td>
+						<td><input type="checkbox" name="b_cargo" value="S"  />Cargo</td>
+						<td><input type="checkbox" name="b_abono" value="S"  />Abono</td>
 					</tr>
 					<tr>
-						<td colspan="2" align="center">
+						<td colspan="4" align="center">
 							<input type="submit" value="Guardar" />
 							<input type="reset" value="Limpiar" />
 						</td>

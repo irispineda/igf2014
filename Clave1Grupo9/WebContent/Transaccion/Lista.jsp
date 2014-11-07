@@ -38,7 +38,7 @@
 			transaccion = (Transaccion) lst.get(i); 
 			mensaje += "<tr>"+
 							"<td>"+transaccion.getFechaTransaccion()+"</td>"+
-							"<td>"+transaccion.montoTransaccion()+"</td>"+
+							"<td>"+transaccion.getMontoTransaccion()+"</td>"+
 							"<td><a href='Edit.jsp?idtransaccion="+transaccion.getIdtransaccion()+"&accion=ver'><img class='iconview' ></a></td>"+
 							"<td><a href='Edit.jsp?idtransaccion="+transaccion.getIdtransaccion()+"&accion=edit'><img class='iconedit' ></a></td>"+
 							"<td><a href='Edit.jsp?idtransaccion="+transaccion.getIdtransaccion()+"&accion=borrar'><img class='icondel' ></a></td>"+

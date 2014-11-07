@@ -15,11 +15,12 @@
         <mapping class="org.sv.ues.igf.entidades.Concepto" />
         <mapping class="org.sv.ues.igf.entidades.Transaccion" />
         <mapping class="org.sv.ues.igf.entidades.Cliente" />
+        <mapping class="org.sv.ues.igf.entidades.Pais" />
         <mapping class="org.sv.ues.igf.entidades.Tipocliente" />
         <mapping class="org.sv.ues.igf.entidades.Tarjetacredito" />
         <mapping class="org.sv.ues.igf.entidades.Clientetarjetaestado" />
         <mapping class="org.sv.ues.igf.entidades.Establecimiento" />
-        <mapping class="org.sv.ues.igf.entidades.Pais" />
         <mapping class="org.sv.ues.igf.entidades.Clientetarjeta" />
+        <!-- -->
     </session-factory>
 </hibernate-configuration>
