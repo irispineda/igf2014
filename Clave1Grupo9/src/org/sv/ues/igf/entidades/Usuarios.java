@@ -18,12 +18,12 @@ import org.hibernate.annotations.NamedQuery;
 @NamedQueries({
 	@NamedQuery(name = "Usuarios.findByAll", query = "SELECT u FROM Usuarios u "),
 	@NamedQuery(name = "Usuarios.findById", query = "SELECT u FROM Usuarios u WHERE id = :id"),
-	@NamedQuery(name = "Usuarios.findByUsuarioPassword", query = "SELECT u FROM Usuarios u WHERE email = :email AND password = :pass")
+	@NamedQuery(name = "Usuarios.findByUsuarioPassword", query = "SELECT u FROM Usuarios u WHERE usuario = :usuario AND password = :pass")
 })
 public class Usuarios implements java.io.Serializable {
 
 	private Integer id;
-	private String email;
+	private String usuario;
 	private String password;
 	private String name;
 	private String rol;
@@ -31,8 +31,8 @@ public class Usuarios implements java.io.Serializable {
 	public Usuarios() {
 	}
 
-	public Usuarios(String email, String password, String name, String rol) {
-		this.email = email;
+	public Usuarios(String usuario, String password, String name, String rol) {
+		this.usuario = usuario;
 		this.password = password;
 		this.name = name;
 		this.rol = rol;
@@ -49,13 +49,13 @@ public class Usuarios implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "email", nullable = false, length = 100)
-	public String getEmail() {
-		return this.email;
+	@Column(name = "usuario", nullable = false, length = 100)
+	public String getUsuario() {
+		return this.usuario;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setusuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	@Column(name = "password", nullable = false, length = 50)

@@ -61,7 +61,7 @@ public class UsuariosDAO {
 	public Usuarios findByUsuarioPassword(String usuario, String password){
 		iniciarSesion();
 		Query query = s.getNamedQuery("Usuarios.findByUsuarioPassword");
-		query.setParameter("email",usuario);
+		query.setParameter("usuario",usuario);
 		query.setParameter("pass",password);
 		Usuarios usuarios = (Usuarios) query.uniqueResult();
 		finSesion();
