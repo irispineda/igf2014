@@ -30,8 +30,14 @@
         	UsuariosCtrl ctrl = new UsuariosCtrl();
         	if(ctrl.validaUsuario(usuario,pwd)){
         		session.setAttribute("usuario",usuario);
+        		divLogin="<div id='dialog' title='Bienvenido'>"+
+						 "	<p>Bienvenido!</p>"+
+						 "</div>";
         	}else{
         		divLogin =  "<div id='login'>"+
+        					"	<div id='dialog' title='Revise'>"+
+        					"		<p>Usuario o password no son correctos.</p>"+
+        					"	</div>"+
 		        			"	<div id='login_outer'>"+
 		        			"		<div id='login_inner'>"+
 		        			"			<h2><img class='iconlock'></span>    Entrar</h2>"+
@@ -49,6 +55,17 @@
 		        			"</div>";
         	}
         }
+    }else{
+    	if(request.getParameter("accion")==null){
+    		
+    	}else{
+    		String accion =request.getParameter("accion");
+    		if(accion.equals("salir")){
+    			session.setAttribute("usuario", null);
+    	    	session.invalidate();
+    	    	response.sendRedirect("index.jsp");
+    		}
+    	}
     }	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -56,9 +73,12 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="style.css" media="screen,projection" />
-	<script type="text/javascript" src="jquery-1.7.2.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/jquery-ui-1.11.2/jquery-ui.css" media="screen,projection" />
+	<script src="js/jquery-ui-1.11.2/external/jquery/jquery.js"></script>
+	<script src="js/jquery-ui-1.11.2/jquery-ui.js"></script>
 	<script type="text/javascript">
-		
+		$(function(){$( "#dialog" ).dialog();});
+	  </script>
 	</script>
 	<title>UES-IGF115-Clave1-Grupo9-2014</title>
 </head>
@@ -99,6 +119,7 @@
 					<li><a href="#">Estado de Cuenta</a></li>
 				</ul>
 			</li>
+			<li><a href="index.jsp?accion=salir">Salir</a></li>
 			<li class="hide"><a href="#header">Back to top</a></li>
 		</ul>
 	</div>

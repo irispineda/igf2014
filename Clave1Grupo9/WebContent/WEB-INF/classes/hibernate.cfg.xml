@@ -21,6 +21,7 @@
         <mapping class="org.sv.ues.igf.entidades.Clientetarjetaestado" />
         <mapping class="org.sv.ues.igf.entidades.Establecimiento" />
         <mapping class="org.sv.ues.igf.entidades.Clientetarjeta" />
+        <mapping class="org.sv.ues.igf.entidades.Usuarios" />
         <!-- -->
     </session-factory>
 </hibernate-configuration>
