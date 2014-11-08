@@ -1,15 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="org.sv.ues.igf.entidades.*"%>
 <%@page import="org.sv.ues.igf.controlador.*"%>
 <%
 	Tipocliente tipoCliente = new Tipocliente();
 	SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-	
-	tipoCliente.setIdtipocliente(Integer.parseInt(request
-			.getParameter("idtipocliente")));
-	tipoCliente.setFechIngres(formatter.parse(request.getParameter("fecha_ingreso")));
+
+	tipoCliente.setIdtipocliente(request
+			.getParameter("idtipocliente"));
+	tipoCliente.setFechIngres(formatter.parse(request
+			.getParameter("fecha_ingreso")));
 	tipoCliente.setDTipoCliente(request.getParameter("tipo_cliente"));
 
 	TipoClienteCtrl tipoClienteCtrl = new TipoClienteCtrl();
