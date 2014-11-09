@@ -41,7 +41,7 @@
 		        			"	<div id='login_outer'>"+
 		        			"		<div id='login_inner'>"+
 		        			"			<h2><img class='iconlock'></span>    Entrar</h2>"+
-		        			"			<form action='index.jsp' method='post'>"+
+		        			"			<form action='spring_security_login' method='post'>"+
 		        			"				<fieldset>"+
 		        			"					<p><label for='email'>Usuario</label></p>"+
 		        			"					<p><input type='email' id='email' value='mail@address.com' name='usuario'></p>"+
@@ -120,6 +120,7 @@
 				</ul>
 			</li>
 			<li><a href="index.jsp?accion=salir">Salir</a></li>
+			<li><a href="j_spring_security_logout">Salir Spring</a></li>
 			<li class="hide"><a href="#header">Back to top</a></li>
 		</ul>
 	</div>
@@ -132,7 +133,6 @@
 			<div class="fcenter"><p>Grupo 9</p></div>
 		</div>
 	</div>
-	<%=divLogin%>
 </div>
 </body>
 </html>
