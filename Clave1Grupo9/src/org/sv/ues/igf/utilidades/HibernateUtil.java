@@ -15,7 +15,7 @@ import org.hibernate.service.ServiceRegistryBuilder;
  */
 public class HibernateUtil {
 	private static SessionFactory sf;
-	
+	 private static SessionFactory sessionFactory;
 	/**
 	 *  
 	 */
@@ -40,6 +40,10 @@ public class HibernateUtil {
 	public static SessionFactory getSf() {
 		return sf;
 	}
+
+	 public static SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
 }
 
 
