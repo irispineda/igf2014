@@ -4,19 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="../style.css" media="screen,projection" />
  <link rel="stylesheet" type="text/css" href="../style.css" media="screen,projection" />
- <script src="../js/jquery-ui-1.11.2/external/jquery/jquery.js"></script>
-<script src="../js/jquery-ui-1.11.2/jquery-ui.js"></script>
-	<script language="javascript">
-	$(function() {
-		$( "#datepicker1" ).datepicker();
-		$( "#datepicker2" ).datepicker();
-		$( "#datepicker3" ).datepicker();
-	});
-</script>
-    
-	<title>UES-IGF115-Clave1-Grupo9-2014</title>
 
-</head>    
+<title>UES-IGF115-Clave1-Grupo9-2014</title>
+</head>
 <body>
 <div id="wrap">
 	<div id="header">
@@ -61,13 +51,8 @@
 	</div>
 	<div id="content">
 		<form action="crearCliente.jsp" method="post">
-			Introduza el nombre del  cliente: <input type="text" name="nombClient"/><br><br>
-			Introduza el apellido del  cliente: <input type="text" name="apellidoClient"/><br><br>
-			Introduza la dirección del  cliente: <input type="text" name="direccion"/><br><br>
-			Introduza el teléfono del  cliente: <input type="text" name="telefono"/><br><br>
-			Introduza la fecha de nacimiento del cliente: <input type="text" id="datepicker1" name="fechaNacimiento" value="" size=8/><br><br>
-			Introduza el email del cliente: <input type="text" name="email"/><br><br>
-			Introduza el id del tipo cliente: <input type="text" name="idtipocliente"/><br><br>
+			Introduza el id del  tipo cliente: <input type="text" name="idcliente"/><br><br>
+			
 			<input type="submit" value="Crear">
 		</form>	
 	</div>
@@ -79,5 +64,6 @@
 		</div>
 	</div>
 </div>
+
 </body>
 </html>

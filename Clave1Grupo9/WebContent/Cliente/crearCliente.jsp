@@ -2,16 +2,16 @@
 	pageEncoding="ISO-8859-1"%>
 
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="org.sv.ues.igf.entidades.*"%>
-<%@page import="org.sv.ues.igf.controlador.*"%>
+<%@page import="org.sv.ues.igf.entidades.Cliente"%>
+<%@page import="org.sv.ues.igf.entidades.Tipocliente"%>
+<%@page import="org.sv.ues.igf.controlador.ClienteCtrl"%>
+<%@page import="org.sv.ues.igf.controlador.TipoClienteCtrl"%>
 <%
 	Cliente cliente = new Cliente();
 	SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-	Tipocliente tipoCliente = new Tipocliente();
-	tipoCliente.setIdtipocliente(request.getParameter("idtipocliente"));
+	TipoClienteCtrl tcCtrl = new TipoClienteCtrl();
+	Tipocliente tipoCliente = tcCtrl.findById(request.getParameter("idtipocliente"));
 
-	cliente.setIdtipocliente(Integer.parseInt(request
-			.getParameter("idcliente")));
 	cliente.setNombClient(request.getParameter("nombClient"));
 	cliente.setApellidoClient(request.getParameter("apellidoClient"));
 	cliente.setDireccion(request.getParameter("direccion"));
@@ -26,10 +26,10 @@
 	boolean existe = clienteCtrl.guardar(cliente);
 	String mensaje;
 
-	if (!existe) {
+	if (existe) {
 		mensaje = "Se creo el  cliente";
 	} else {
-		mensaje = "Ya hay un cliente con ese id";
+		mensaje = "Error al guardar el cliente";
 	}
 %>
 
@@ -37,7 +37,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Crear Clientee</title>
+<title>Crear Cliente</title>
 </head>
 <body>
 	<%=mensaje%>

@@ -10,13 +10,7 @@ public class ClienteCtrl {
 	private ClienteDAO dao = new ClienteDAO();
 
 	public boolean guardar(Cliente cliente) {
-		boolean existe = false;
-		if(dao.findById(cliente.getIdcliente()) != null) {
-			existe = true;
-		} else {
-			dao.guardar(cliente);
-		}
-		return existe;
+		return dao.guardar(cliente);
 	}
 
 	public void borrar(int idCliente) {

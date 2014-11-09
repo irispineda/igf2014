@@ -16,13 +16,15 @@ public class ClienteDAO {
 	private Session s;
 	private Transaction tx;
 
-	public void guardar(Cliente cliente) {
+	public boolean guardar(Cliente cliente) {
 		try {
 			iniciarTransaccion();
 			s.saveOrUpdate(cliente);
 			finTransaccion();
+			return true;
 		} catch (Exception e) {
 			System.err.println(this + "Ocurrio un error " + e.getMessage());
+			return false;
 		}
 	}
 
@@ -66,8 +68,8 @@ public class ClienteDAO {
 	}
 
 	private void finTransaccion() {
-		tx.commit();
 		s.flush();
+		tx.commit();
 		s.close();
 	}
 

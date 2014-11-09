@@ -13,6 +13,7 @@
         <property name="show_sql">true</property> 
         <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
         <property name="hibernate.search.autoregister_listeners">false</property>
+        <property name="hibernate.show_sql">true</property>
         
         <!-- MAPPING -->
         <mapping class="org.sv.ues.igf.entidades.Concepto" />
