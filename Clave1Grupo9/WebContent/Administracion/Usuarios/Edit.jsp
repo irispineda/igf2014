@@ -5,7 +5,7 @@
 <%@ page import="java.util.Date" %>
 <%
 	Usuarios usuario = new Usuarios();
-	String disable = "";
+	String disable = "", admin = "", user = "";
 	UsuariosCtrl ctrl = new UsuariosCtrl();
 	
 	String accion = request.getParameter("accion");
@@ -21,15 +21,12 @@
 		usuario = ctrl.findById(ident);
 	}
 	
-	String admin, user;
-	admin = user = "";
-	
 	if (accion.equals("guardar")){
 		Conversiones c = new Conversiones();
 		usuario.setUser(c.getUsuario());
 		usuario.setDatareg(new Date());
 		usuario.setUsuario(request.getParameter("usuario"));
-		usuario.setName(request.getParameter("name"));
+		usuario.setName(request.getParameter("nombre"));
 		usuario.setPassword(request.getParameter("password"));
 		usuario.setRole(request.getParameter("role"));
 		if (ident != 0) usuario.setId(ident);
@@ -111,7 +108,7 @@
 					</tr>
 					<tr>
 						<td>Nombre</td>
-						<td><input type="text" name="name" value="<%=usuario.getName()%>" <%=disable%> /></td>
+						<td><input type="text" name="nombre" value="<%=usuario.getName()%>" <%=disable%> /></td>
 						<td>Rol</td>
 						<td><select name="ultgrado" <%=disable%>>
 								<option value="ROLE_USER" <%=user%>>Usuario</option>
