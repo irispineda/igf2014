@@ -20,9 +20,9 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "establecimiento", catalog = "clave1", schema = "")
 @NamedQueries({
-	@NamedQuery(name = "Establecimiento.findAll", query = "SELECT p FROM Pais p"),
-	@NamedQuery(name = "Establecimiento.findByNumReferencia", query = "SELECT p FROM pais p WHERE p.numReferencia = :numReferencia"),
-	@NamedQuery(name = "Establecimiento.findByEstablecimiento", query = "SELECT p FROM Pais p WHERE p.establecimiento = :establecimiento") })
+	@NamedQuery(name = "Establecimiento.findAll", query = "SELECT p FROM Establecimiento p"),
+	@NamedQuery(name = "Establecimiento.findByNumReferencia", query = "SELECT p FROM Establecimiento p WHERE p.numReferencia = :numReferencia"),
+	@NamedQuery(name = "Establecimiento.findByEstablecimiento", query = "SELECT p FROM Establecimiento p WHERE p.establecimiento = :establecimiento") })
 public class Establecimiento implements java.io.Serializable {
 
 	private Short numReferencia;
