@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="org.sv.ues.igf.controlador.ConceptoCtrl" %>
 <%@ page import="org.sv.ues.igf.entidades.Concepto" %>
-
+<%@ page import="org.sv.ues.igf.utilidades.Conversiones" %>
+<%@ page import="java.util.Date" %>
 <%
 	Concepto concepto = new Concepto();
 	String disable = "";
@@ -21,6 +22,9 @@
 	}
 	
 	if (accion.equals("guardar")){
+		Conversiones c = new Conversiones();
+		concepto.setUser(c.getUsuario());
+		concepto.setDatareg(new Date());
 		concepto.setDescripcion(request.getParameter("descripcion"));
 		if (ident != 0) concepto.setIdconcepto(ident);
 		ctrl.guardar(concepto);
