@@ -2,10 +2,13 @@
     pageEncoding="ISO-8859-1"%>
     <%@ page import="org.sv.ues.igf.controlador.*" %> 
     <%@ page import="java.util.*" %>
+    <%@ page import="org.sv.ues.igf.utilidades.Conversiones" %>
 <%
 	String nombre = request.getParameter("nombre");
 	String domicilio = request.getParameter("dom");
-	Date fecha = (Date.ValueOf(request.getParameter("fecha")));
+	//Date fecha = (Date.ValueOf(request.getParameter("fecha")));
+	Conversiones c = new Conversiones();
+	Date fecha = c.stringToDate(request.getParameter("fechaTransaccion"));
 	String activo = request.getParameter("activo");
 	CtrlEstablecimiento est = new CtrlEstablecimiento();
 	boolean exito = est.crearEstablecimiento(nombre, domicilio, fecha, activo);
