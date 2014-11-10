@@ -13,9 +13,9 @@ p {margin:0 0 18px 8px}
 h2 {font-size:1.5em;font-weight:normal;letter-spacing:-1px;margin:10px 0 8px 0}
 h3 {font-size:1.2em;margin:2px 0 8px 0}
 /* Main wrap */
-#wrap {background:#fff url(images/wrapbg.gif) top left repeat-y;color:#303030;margin:0 auto;width:760px}
+#wrap {background:#fff url(/Clave1Grupo9/images/wrapbg.gif) top left repeat-y;color:#303030;margin:0 auto;width:760px}
 /* Header */
-#header {clear:both;background:url(images/header.jpg) top left no-repeat;height:150px}
+#header {clear:both;background:url(/Clave1Grupo9/images/header.jpg) top left no-repeat;height:150px}
 #header h1 {font-size:3.8em;letter-spacing:-4px;color:#d88d44;padding:55px 0 10px 45px}
 #header h1 a {color:#d88d44;text-decoration:none}
 #header h1 a:hover {color:#e99e55}
@@ -37,14 +37,14 @@ h3 {font-size:1.2em;margin:2px 0 8px 0}
 #content h3 {font-size:1.4em;font-weight:normal;letter-spacing:-1px;margin:10px 0 8px 0}
 #content p {text-align:justify}
 /* Footer */
-#footer {clear:both;margin:5px auto;padding:10px 0;width:760px;text-align:center;background: url(images/footer.jpg) bottom left no-repeat;color:#555;font-size:0.9em;line-height:1.5em}
+#footer {clear:both;margin:5px auto;padding:10px 0;width:760px;text-align:center;background: url(/Clave1Grupo9/images/footer.jpg) bottom left no-repeat;color:#555;font-size:0.9em;line-height:1.5em}
 #footer p {margin:11px}
 #footer p strong {font-size:1.1em;font-weight:400}
 #footer a {color:#777;font-weight:400;text-decoration:none}
 #footer a:hover {text-decoration:underline}
 /* Various classes */
-.datetag {width:50px;padding:0 0 10px 0;text-align:center;background:#20526a url(images/date-bottom.gif) bottom left no-repeat;margin:2px 15px 1px 10px;color:#fff;font-size:2.2em;text-align:center;float:left}
-.datetag .date {width:50px;display:block;letter-spacing:-1px;padding:15px 0 5px 0;background:#20526a url(images/date-top.gif) top left no-repeat}
+.datetag {width:50px;padding:0 0 10px 0;text-align:center;background:#20526a url(/Clave1Grupo9/images/date-bottom.gif) bottom left no-repeat;margin:2px 15px 1px 10px;color:#fff;font-size:2.2em;text-align:center;float:left}
+.datetag .date {width:50px;display:block;letter-spacing:-1px;padding:15px 0 5px 0;background:#20526a url(/Clave1Grupo9/images/date-top.gif) top left no-repeat}
 .datetag .month {font-size:0.5em;letter-spacing:-1px;width:50px;display:block;font-weight:bold}
 .textright {text-align:right}
 .center {text-align:center}
@@ -53,12 +53,12 @@ h3 {font-size:1.2em;margin:2px 0 8px 0}
 .bold {font-weight:bold}
 .clear {clear:both}
 .hide {display:none}
-#footer {clear:both;margin:5px auto;padding:10px 0;width:760px;text-align:center;background: url(images/footer.jpg) bottom left no-repeat;color:#555;font-size:0.9em;line-height:1.5em}
+#footer {clear:both;margin:5px auto;padding:10px 0;width:760px;text-align:center;background: url(/Clave1Grupo9/images/footer.jpg) bottom left no-repeat;color:#555;font-size:0.9em;line-height:1.5em}
 caption{font-size:16px;color:#20526a;font-weight:bold}
-.iconnew{content:url(images/new.jpg); width: 15px;height: 15px;}
-.icondel{content:url(images/del.jpg); width: 15px;height: 15px;}
-.iconview{content:url(images/view.jpg); width: 15px;height: 15px;}
-.iconedit{content:url(images/edit.jpg); width: 15px;height: 15px;}
+.iconnew{content:url(/Clave1Grupo9/images/new.jpg); width: 15px;height: 15px;}
+.icondel{content:url(/Clave1Grupo9/); width: 15px;height: 15px;}
+.iconview{content:url(/Clave1Grupo9/images/view.jpg); width: 15px;height: 15px;}
+.iconedit{content:url(/Clave1Grupo9/images/edit.jpg); width: 15px;height: 15px;}
 /* Login */
 #login {position:absolute; top:175px; float:left; width:750px; height:310px;}/*border:3px solid Red;*/
 #login_outer {overflow:hidden;text-align:center;margin:auto;}
@@ -73,7 +73,7 @@ caption{font-size:16px;color:#20526a;font-weight:bold}
 /*#login fieldset input[type="email"], #login fieldset input[type="password"] {background-color: #eee;color: #404053;padding: 4px 10px;width: 328px;}*/
 #login fieldset input[type="submit"] {background-color: #404053;color: #fff;display: block;margin: 0 auto;padding: 4px 0;width: 100px;}
 #login fieldset input[type="submit"]:hover {background-color: #d88d44;}
-.iconlock{content:url(images/lock.jpg); width: 25px;height: 25px;}
+.iconlock{content:url(/Clave1Grupo9/images/lock.jpg); width: 25px;height: 25px;}
 /* Message */
 #message {position:absolute; top:175px; float:left; width:750px; height:310px;}/*border:3px solid Red;*/
 #message_outer {overflow:hidden;text-align:center;margin:auto;}
