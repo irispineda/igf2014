@@ -1,7 +1,7 @@
 package org.sv.ues.igf.controlador;
 
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 import org.sv.ues.igf.entidades.*;
 import org.sv.ues.igf.dao.*;
