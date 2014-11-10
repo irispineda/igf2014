@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ page import="org.sv.ues.igf.controlador.ConceptoCtrl" %>
-<%@ page import="org.sv.ues.igf.entidades.Concepto" %>
+<%@ page import="org.sv.ues.igf.controlador.UsuariosCtrl" %>
+<%@ page import="org.sv.ues.igf.entidades.Usuarios" %>
 <%@ page import="java.util.*" %>
 <%
-	ConceptoCtrl ctrl = new ConceptoCtrl();
-	Concepto alumno = new Concepto();
+	UsuariosCtrl ctrl = new UsuariosCtrl();
+	Usuarios alumno = new Usuarios();
 	List lst = null;
 	
 	String accion = request.getParameter("accion");
@@ -23,25 +23,27 @@
 	
 	mensaje = "<table>"+
 			  	"<thead>"+
-					"<caption>Conceptos <a href='Edit.jsp?idconcepto=0&accion=nuevo'><img class='iconnew' ></a></caption>"+
+					"<caption>Conceptos <a href='Edit.jsp?id=0&accion=nuevo'><img class='iconnew' ></a></caption>"+
 					"<tr>"+
-						"<th>C&oacute;digo</th>"+
-						"<th>Descripci&oacute;n</th>"+
+						"<th>Usuario</th>"+
+						"<th>Nombre</th>"+
+						"<th>Rol</th>"+
 					"</tr>"+
 				"</thead>"+
 				"<tbody>";
 	if(lst.isEmpty()){
 		mensaje += "<tr><td colspan=5>No hay registros</td></tr>";
 	}else{
-		Concepto concepto;
+		Usuarios usuario;
 		for(int i=0;i<lst.size();i++){
-			concepto = (Concepto) lst.get(i); 
+			usuario = (Usuarios) lst.get(i); 
 			mensaje += "<tr>"+
-							"<td>"+concepto.getIdconcepto()+"</td>"+
-							"<td>"+concepto.getDescripcion()+"</td>"+
-							"<td><a href='Edit.jsp?idconcepto="+concepto.getIdconcepto()+"&accion=ver'><img class='iconview' ></a></td>"+
-							"<td><a href='Edit.jsp?idconcepto="+concepto.getIdconcepto()+"&accion=edit'><img class='iconedit' ></a></td>"+
-							"<td><a href='Edit.jsp?idconcepto="+concepto.getIdconcepto()+"&accion=borrar'><img class='icondel' ></a></td>"+
+							"<td>"+usuario.getUsuario()+"</td>"+
+							"<td>"+usuario.getName()+"</td>"+
+							"<td>"+usuario.getRole()+"</td>"+
+							"<td><a href='Edit.jsp?id="+usuario.getId()+"&accion=ver'><img class='iconview' ></a></td>"+
+							"<td><a href='Edit.jsp?id="+usuario.getId()+"&accion=edit'><img class='iconedit' ></a></td>"+
+							"<td><a href='Edit.jsp?id="+usuario.getId()+"&accion=borrar'><img class='icondel' ></a></td>"+
 						"</tr>"; 
 		}
 	}
@@ -52,7 +54,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="../style.css" media="screen,projection" />
+	<link rel="stylesheet" type="text/css" href="/Clave1Grupo9/style.css" media="screen,projection" />
 	
 	<title>UES-IGF115-Clave1-Grupo9-2014</title>
 </head>
@@ -75,7 +77,7 @@
 					<li><a href="#">Tipo de Cliente</a></li>
 					<li><a href="#">Establecimiento</a></li>
 					<li><a href="#">Pais</a></li>
-					<li><a href="#" class="current">Concepto</a></li>
+					<li><a href="#">Concepto</a></li>
 				</ul>
 			</li>
 			<li>
@@ -93,7 +95,14 @@
 					<li><a href="#">Estado de Cuenta</a></li>
 				</ul>
 			</li>
-			<li class="hide"><a href="#header">Back to top</a></li>
+			<li>
+				<a href="#">Administracion</a>
+				<ul>
+					<li><a class="current" href="#">Usuarios</a></li>
+				</ul>
+			</li>
+			<li><a href="j_spring_security_logout">Cerrar sesión</a></li>
+			
 		</ul>
 	</div>
 	<div id="extras">

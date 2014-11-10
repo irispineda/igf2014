@@ -6,7 +6,7 @@
 <%
 	Usuarios usuario = new Usuarios();
 	String disable = "";
-	ConceptoCtrl ctrl = new ConceptoCtrl();
+	UsuariosCtrl ctrl = new UsuariosCtrl();
 	
 	String accion = request.getParameter("accion");
 	if (accion == null) accion = "";
@@ -20,6 +20,9 @@
 	} else {
 		usuario = ctrl.findById(ident);
 	}
+	
+	String admin, user;
+	admin = user = "";
 	
 	if (accion.equals("guardar")){
 		Conversiones c = new Conversiones();
@@ -35,13 +38,15 @@
 		response.sendRedirect("Lista.jsp");
 	} else if (accion.equals("ver")) {
 		disable = "disabled";
+		if (usuario.getRole().equals("ROLE_USER")) user = "selected";
+		else admin = "selected";
 	}
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="../style.css" media="screen,projection" />
+	<link rel="stylesheet" type="text/css" href="/Clave1Grupo9/style.css" media="screen,projection" />
 	<title>UES-IGF115-Clave1-Grupo9-2014</title>
 </head>
 <body>
@@ -96,23 +101,23 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>C&oacute;digo</td>
-						<td><input type="text" value="<%=usuario.getId()%>" disabled /></td>
-					</tr>
-					<tr>
 						<td>Usuario</td>
 						<td><input type="text" name="usuario" value="<%=usuario.getUsuario()%>" <%=disable%> /></td>
-						<td>Contraseña</td>
+						<td>Contrase&ntilde;a</td>
 						<td><input type="text" name="password" value="<%=usuario.getPassword()%>" <%=disable%> /></td>
 					</tr>
 					<tr>
 						<td>Nombre</td>
 						<td><input type="text" name="name" value="<%=usuario.getName()%>" <%=disable%> /></td>
 						<td>Rol</td>
-						<td><input type="text" name="nombre" value="<%=usuario.getNombre()%>" <%=disable%> /></td>
+						<td><select name="ultgrado" <%=disable%>>
+								<option value="ROLE_USER" <%=user%>>Usuario</option>
+								<option value="ROLE_ADMIN" <%=admin%>>Administrador</option>
+							</select>
+						</td>
 					</tr>
 					<tr>
-						<td colspan="2" align="center">
+						<td colspan="4" align="center">
 							<input type="submit" value="Guardar" />
 							<input type="reset" value="Limpiar" />
 						</td>
