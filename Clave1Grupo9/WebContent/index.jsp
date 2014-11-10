@@ -44,8 +44,13 @@
 					<li><a href="#">Estado de Cuenta</a></li>
 				</ul>
 			</li>
+			<li>
+				<a href="#">Administracion</a>
+				<ul>
+					<li><a href="./Administracion/Usuarios/Lista.jsp">Usuarios</a></li>
+				</ul>
+			</li>
 			<li><a href="j_spring_security_logout">Cerrar sesión</a></li>
-			<li class="hide"><a href="#header">Back to top</a></li>
 		</ul>
 	</div>
 	<div id="content">
