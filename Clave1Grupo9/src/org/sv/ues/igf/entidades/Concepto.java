@@ -2,12 +2,16 @@ package org.sv.ues.igf.entidades;
 
 // Generated 10-25-2014 10:33:59 PM by Hibernate Tools 3.4.0.CR1
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -29,6 +33,8 @@ public class Concepto implements java.io.Serializable {
 
 	private Integer idconcepto;
 	private String descripcion;
+	private String user;
+	private Date datareg;
 	//private Set<Transaccion> transaccions = new HashSet<Transaccion>(0);
 
 	public Concepto() {
@@ -59,6 +65,25 @@ public class Concepto implements java.io.Serializable {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+	
+	@Column(name = "user", length = 45)
+	public String getUser() {
+		return this.user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "datareg", length = 19)
+	public Date getDatareg() {
+		return this.datareg;
+	}
+
+	public void setDatareg(Date datareg) {
+		this.datareg = datareg;
 	}
 
 	/*@OneToMany(fetch = FetchType.LAZY, mappedBy = "concepto")
