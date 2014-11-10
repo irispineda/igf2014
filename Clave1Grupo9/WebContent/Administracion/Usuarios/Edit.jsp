@@ -29,6 +29,9 @@
 		usuario.setUser(c.getUsuario());
 		usuario.setDatareg(new Date());
 		usuario.setUsuario(request.getParameter("usuario"));
+		usuario.setName(request.getParameter("name"));
+		usuario.setPassword(request.getParameter("password"));
+		usuario.setRole(request.getParameter("role"));
 		if (ident != 0) usuario.setId(ident);
 		ctrl.guardar(usuario);
 		response.sendRedirect("Lista.jsp");
