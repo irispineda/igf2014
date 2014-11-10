@@ -23,7 +23,10 @@
 	
 	mensaje = "<table>"+
 			  	"<thead>"+
-					"<caption>Conceptos <a href='Edit.jsp?idconcepto=0&accion=nuevo'><img class='iconnew' ></a></caption>"+
+					"<caption>Conceptos"+ 
+							 "<a href='Edit.jsp?idconcepto=0&accion=nuevo'><img class='iconnew' ></a>"+
+							 "<a href='Print.jsp'>print</a>"+
+					"</caption>"+
 					"<tr>"+
 						"<th>C&oacute;digo</th>"+
 						"<th>Descripci&oacute;n</th>"+
