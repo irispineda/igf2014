@@ -27,6 +27,7 @@
 	String mensaje;
 
 	if (existe) {
+		response.sendRedirect("listaCliente.jsp");
 		mensaje = "Se creo el  cliente";
 	} else {
 		mensaje = "Error al guardar el cliente";

@@ -18,7 +18,7 @@
 		              + "<td>" + tc.getFechIngres() + "</td>"
 		              + "<td>"
                       + "<input type=button onClick=\"location.href='#'\" value='Editar'>&nbsp;"
-				      + "<input type=button onClick=\"location.href='#'\" value='Eliminar'>&nbsp;"
+				      + "<input type=button onClick=\"location.href='eliminarTipoCliente.jsp?idtipoclient=" + tc.getIdtipocliente() + "'\" value='Eliminar'>&nbsp;"
 		              + "</td>"
 				      + "</tr>";
 	}
@@ -79,6 +79,8 @@
    </div>
    <div id="content">
       <p><strong>Lista de Clentes</strong></p>
+      <p><input type=button onClick="location.href='creartipocliente.html'" value='Nuevo Tipo Cliente'></p>
+
       <table style="border: 1px solid">
          <thead>
             <tr>

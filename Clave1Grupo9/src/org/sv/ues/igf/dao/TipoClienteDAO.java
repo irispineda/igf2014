@@ -25,14 +25,16 @@ public class TipoClienteDAO {
 		}
 	}
 
-	public void borrar(String idTipoCliente) {
+	public boolean borrar(String idTipoCliente) {
 		try {
 			iniciarTransaccion();
 			Tipocliente tipocliente = findByIdTipocliente(idTipoCliente);
 			s.delete(tipocliente);
 			finTransaccion();
+			return true;
 		} catch (Exception e) {
 			System.err.println(this + "Ocurrio un error " + e.getMessage());
+			return false;
 		}
 	}
 

@@ -15,14 +15,13 @@ public class TipoClienteCtrl {
 		boolean existe = false;
 		if(dao.findById(tipoCliente.getIdtipocliente()) != null) {
 			existe = true;
-		} else {
 			dao.guardar(tipoCliente);
 		}
 		return existe;
 	}
 
-	public void borrar(String idTipoCliente) {
-		dao.borrar(idTipoCliente);
+	public boolean borrar(String idTipoCliente) {
+		return dao.borrar(idTipoCliente);
 	}
 
 	public Tipocliente findById(String idTipoCliente) {

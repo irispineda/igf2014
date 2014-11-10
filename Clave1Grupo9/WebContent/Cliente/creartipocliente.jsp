@@ -18,7 +18,8 @@
 	boolean existe = tipoClienteCtrl.guardar(tipoCliente);
 	String mensaje;
 
-	if (!existe) {
+	if (existe) {
+		response.sendRedirect("listaTipoCliente.jsp");
 		mensaje = "Se creo el tipo cliente";
 	} else {
 		mensaje = "Ya hay un tipo cliente con ese id";

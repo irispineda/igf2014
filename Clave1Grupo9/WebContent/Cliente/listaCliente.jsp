@@ -83,6 +83,7 @@
    </div>
    <div id="content">
       <p><strong>Lista de Clentes</strong></p>
+      <p><input type=button onClick="location.href='crearCliente.html'" value='Nuevo Cliente'></p>
       <table>
          <thead>
             <tr>
