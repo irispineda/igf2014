@@ -1,5 +1,9 @@
 package org.sv.ues.igf.entidades;
 
+import java.util.Date;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,16 +30,18 @@ public class Usuarios implements java.io.Serializable {
 	private String usuario;
 	private String password;
 	private String name;
-	private String rol;
+	private String role;
+	private String user;
+	private Date datareg;
 
 	public Usuarios() {
 	}
 
-	public Usuarios(String usuario, String password, String name, String rol) {
+	public Usuarios(String usuario, String password, String name, String role) {
 		this.usuario = usuario;
 		this.password = password;
 		this.name = name;
-		this.rol = rol;
+		this.role = role;
 	}
 
 	@Id
@@ -76,13 +82,31 @@ public class Usuarios implements java.io.Serializable {
 		this.name = name;
 	}
 
-	@Column(name = "rol", nullable = false, length = 45)
-	public String getRol() {
-		return this.rol;
+	@Column(name = "role", nullable = false, length = 45)
+	public String getRole() {
+		return this.role;
 	}
 
-	public void setRol(String rol) {
-		this.rol = rol;
+	public void setRole(String role) {
+		this.rol = role;
+	}
+	
+	@Column(name = "user", length = 45)
+	public String getUser() {
+		return this.user;
 	}
 
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "datareg", length = 19)
+	public Date getDatareg() {
+		return this.datareg;
+	}
+
+	public void setDatareg(Date datareg) {
+		this.datareg = datareg;
+	}
 }
