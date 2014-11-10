@@ -88,7 +88,7 @@ public class Usuarios implements java.io.Serializable {
 	}
 
 	public void setRole(String role) {
-		this.rol = role;
+		this.role = role;
 	}
 	
 	@Column(name = "user", length = 45)
