@@ -14,6 +14,7 @@
     <http>
     	<intercept-url pattern="/index.jsp" access="ROLE_ADMIN,ROLE_USER,ROLE_GUEST"/>
         <intercept-url pattern="/**" access="ROLE_ADMIN,ROLE_USER" />
+        <intercept-url pattern="/Administracion/**" access="ROLE_ADMIN" />
         <form-login login-page='/login.html' default-target-url='/index.jsp' authentication-failure-url="/nologin.html" always-use-default-target='true'/>
         <access-denied-handler error-page="/denied.html" />
         <logout logout-success-url="/logout.html" invalidate-session="true" />      
