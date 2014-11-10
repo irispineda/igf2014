@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ page import="org.sv.ues.igf.controlador.ConceptoCtrl" %>
-<%@ page import="org.sv.ues.igf.entidades.Concepto" %>
+<%@ page import="org.sv.ues.igf.controlador.UsuariosCtrl" %>
+<%@ page import="org.sv.ues.igf.entidades.Usuarios" %>
 <%@ page import="org.sv.ues.igf.utilidades.Conversiones" %>
 <%@ page import="java.util.Date" %>
 <%
-	Concepto concepto = new Concepto();
+	Usuarios usuario = new Usuarios();
 	String disable = "";
 	ConceptoCtrl ctrl = new ConceptoCtrl();
 	
@@ -12,34 +12,30 @@
 	if (accion == null) accion = "";
 	
 	Integer ident = 0;
-	if (request.getParameter("idconcepto") == null) ident = 0;
-	else ident = Integer.parseInt(request.getParameter("idconcepto"));
+	if (request.getParameter("id") == null) ident = 0;
+	else ident = Integer.parseInt(request.getParameter("id"));
 	
 	if (ident == 0) {
-		concepto = new Concepto();
+		usuario = new Usuarios();
 	} else {
-		concepto = ctrl.findById(ident);
+		usuario = ctrl.findById(ident);
 	}
 	
 	if (accion.equals("guardar")){
 		Conversiones c = new Conversiones();
-		concepto.setUser(c.getUsuario());
-		concepto.setDatareg(new Date());
-		concepto.setDescripcion(request.getParameter("descripcion"));
-		if (ident != 0) concepto.setIdconcepto(ident);
-		ctrl.guardar(concepto);
+		usuario.setUser(c.getUsuario());
+		usuario.setDatareg(new Date());
+		usuario.setUsuario(request.getParameter("usuario"));
+		if (ident != 0) usuario.setId(ident);
+		ctrl.guardar(usuario);
 		response.sendRedirect("Lista.jsp");
 	}else if (accion.equals("borrar")) {
-		concepto = ctrl.findById(ident);
+		usuario = ctrl.findById(ident);
 		ctrl.borrar(ident);
 		response.sendRedirect("Lista.jsp");
 	} else if (accion.equals("ver")) {
 		disable = "disabled";
 	}
-	System.out.println("aqui");
-	System.out.println(concepto.getIdconcepto());
-	
-	System.out.println(concepto.getIdconcepto());
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
@@ -67,7 +63,7 @@
 					<li><a href="#">Tipo de Cliente</a></li>
 					<li><a href="#">Establecimiento</a></li>
 					<li><a href="#">Pais</a></li>
-					<li><a  class="current" href="#">Concepto</a></li>
+					<li><a  class="current" href="#">Usuarios</a></li>
 				</ul>
 			</li>
 			<li>
@@ -93,19 +89,27 @@
 	<div id="content">
 		<form action="Edit.jsp" method="post">
 			<input type="hidden" name="accion" value="guardar"  />
-			<input type="hidden" name="idconcepto" value="<%=concepto.getIdconcepto()%>"  />
+			<input type="hidden" name="id" value="<%=usuario.getId()%>"  />
 			<table>
 				<thead>
-					<caption>Concepto</caption>
+					<caption>Usuarios</caption>
 				</thead>
 				<tbody>
 					<tr>
 						<td>C&oacute;digo</td>
-						<td><input type="text" value="<%=concepto.getIdconcepto()%>" disabled /></td>
+						<td><input type="text" value="<%=usuario.getId()%>" disabled /></td>
 					</tr>
 					<tr>
-						<td>Descripci&oacute;n</td>
-						<td><input type="text" name="descripcion" value="<%=concepto.getDescripcion()%>" <%=disable%> /></td>
+						<td>Usuario</td>
+						<td><input type="text" name="usuario" value="<%=usuario.getUsuario()%>" <%=disable%> /></td>
+						<td>Contraseña</td>
+						<td><input type="text" name="password" value="<%=usuario.getPassword()%>" <%=disable%> /></td>
+					</tr>
+					<tr>
+						<td>Nombre</td>
+						<td><input type="text" name="name" value="<%=usuario.getName()%>" <%=disable%> /></td>
+						<td>Rol</td>
+						<td><input type="text" name="nombre" value="<%=usuario.getNombre()%>" <%=disable%> /></td>
 					</tr>
 					<tr>
 						<td colspan="2" align="center">
