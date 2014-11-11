@@ -24,7 +24,7 @@
 				<a href="#">Catalogos</a>
 				<ul>
 					<li><a href="#">Tipo de Cliente</a></li>
-					<li><a href="#">Establecimiento</a></li>
+					<li><a href="/Clave1Grupo9/Establecimiento/CreaEst.html">Establecimiento</a></li>
 					<li><a href="#" onclick="cargaPagina();">Pais</a></li>
 					<li><a href="./Concepto/Lista.jsp">Concepto</a></li>
 				</ul>

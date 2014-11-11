@@ -17,17 +17,17 @@
         
         <!-- MAPPING -->
         <mapping class="org.sv.ues.igf.entidades.Concepto" />
-        <mapping class="org.sv.ues.igf.entidades.Transaccion" />
-        <mapping class="org.sv.ues.igf.entidades.Cliente" />
-        <mapping class="org.sv.ues.igf.entidades.Pais" />
-        <mapping class="org.sv.ues.igf.entidades.Tipocliente" />
-        <mapping class="org.sv.ues.igf.entidades.Tarjetacredito" />
-        <mapping class="org.sv.ues.igf.entidades.Clientetarjetaestado" />
-        <mapping class="org.sv.ues.igf.entidades.Establecimiento" />
-        <mapping class="org.sv.ues.igf.entidades.Clientetarjeta" />
         <mapping class="org.sv.ues.igf.entidades.Usuarios" />
-         <mapping class="dominio.Tarjeta"/>
-        <mapping class="dominio.ClienteTargeta"/>
+        <mapping class="org.sv.ues.igf.entidades.Establecimiento" />
+        <mapping class="org.sv.ues.igf.entidades.Tarjeta" />
+        <mapping class="org.sv.ues.igf.entidades.Pais" />
+        <mapping class="org.sv.ues.igf.entidades.Cliente" />
+        <mapping class="org.sv.ues.igf.entidades.Transaccion" />
+        <mapping class="org.sv.ues.igf.entidades.Tipocliente" />
+        <mapping class="org.sv.ues.igf.entidades.Tarjeta" />
+        <mapping class="org.sv.ues.igf.entidades.Clientetarjetaestado" />
+        <mapping class="org.sv.ues.igf.entidades.ClienteTargeta" />
         
     </session-factory>
 </hibernate-configuration>
+
