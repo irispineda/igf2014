@@ -25,7 +25,7 @@
 				<ul>
 					<li><a href="Cliente/listaTipoCliente.jsp">Tipo de Cliente</a></li>
 					<li><a href="/Clave1Grupo9/Establecimiento/CreaEst.html">Establecimiento</a></li>
-					<li><a href="#" onclick="cargaPagina();">Pais</a></li>
+					<li><a href="/Clave1Grupo9/Pais/Creapais.html">Pais</a></li>
 					<li><a href="./Concepto/Lista.jsp">Concepto</a></li>
 				</ul>
 			</li>
