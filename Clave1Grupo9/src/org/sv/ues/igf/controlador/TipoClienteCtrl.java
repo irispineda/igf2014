@@ -13,7 +13,7 @@ public class TipoClienteCtrl {
 
 	public boolean guardar(Tipocliente tipoCliente) {
 		boolean existe = false;
-		if(dao.findById(tipoCliente.getIdtipocliente()) != null) {
+		if(dao.findById(tipoCliente.getIdtipocliente()) == null) {
 			existe = true;
 			dao.guardar(tipoCliente);
 		}

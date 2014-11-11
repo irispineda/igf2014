@@ -22,7 +22,7 @@
                       + "<td>" + c.getTelefono() + "</td>"
                       + "<td>"
                       + "<input type=button onClick=\"location.href='#'\" value='Editar'>&nbsp;"
-                      + "<input type=button onClick=\"location.href='#'\" value='Eliminar'>&nbsp;"
+                      + "<input type=button onClick=\"location.href='eliminarCliente.jsp?idcliente=" + c.getIdcliente() + "'\" value='Eliminar'>&nbsp;"
                       + "</td>"
                       + "</tr>";
 	}
@@ -55,7 +55,7 @@
          <li>
             <a href="#">Catalogos</a>
             <ul>
-               <li><a href="#">Tipo de Cliente</a></li>
+               <li><a href="listaTipoCliente.jsp">Tipo de Cliente</a></li>
                <li><a href="#">Establecimiento</a></li>
                <li><a href="#">Pais</a></li>
                <li><a onclick="cargaPagina('./Concepto/Lista.jsp');">Concepto</a></li>
@@ -64,7 +64,7 @@
          <li>
             <a href="#">Maestros</a>
             <ul>
-               <li><a href="#">Cliente</a></li>
+               <li><a href="listaCliente.jsp">Cliente</a></li>
                <li><a href="#">Tarjeta de Credito</a></li>
             </ul>
          </li>

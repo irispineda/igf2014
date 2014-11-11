@@ -13,8 +13,8 @@ public class ClienteCtrl {
 		return dao.guardar(cliente);
 	}
 
-	public void borrar(int idCliente) {
-		dao.borrar(idCliente);
+	public boolean borrar(int idCliente) {
+		return dao.borrar(idCliente);
 	}
 
 	public Cliente findById(int idCliente) {

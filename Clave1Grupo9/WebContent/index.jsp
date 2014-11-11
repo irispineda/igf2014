@@ -23,7 +23,7 @@
 			<li>
 				<a href="#">Catalogos</a>
 				<ul>
-					<li><a href="#">Tipo de Cliente</a></li>
+					<li><a href="Cliente/listaTipoCliente.jsp">Tipo de Cliente</a></li>
 					<li><a href="/Clave1Grupo9/Establecimiento/CreaEst.html">Establecimiento</a></li>
 					<li><a href="#" onclick="cargaPagina();">Pais</a></li>
 					<li><a href="./Concepto/Lista.jsp">Concepto</a></li>
@@ -32,7 +32,7 @@
 			<li>
 				<a href="#">Maestros</a>
 				<ul>
-					<li><a href="#">Cliente</a></li>
+					<li><a href="Cliente/listaCliente.jsp">Cliente</a></li>
 					<li><a href="#">Tarjeta de Credito</a></li>
 				</ul>
 			</li>

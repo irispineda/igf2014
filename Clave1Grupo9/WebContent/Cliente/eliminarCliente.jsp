@@ -5,15 +5,15 @@
 <%@page import="org.sv.ues.igf.entidades.*"%>
 <%@page import="org.sv.ues.igf.controlador.*"%>
 <%
-   TipoClienteCtrl tipoClienteCtrl = new TipoClienteCtrl();
-   boolean existe = tipoClienteCtrl.borrar(request.getParameter("idtipocliente"));
+   ClienteCtrl clienteCtrl = new ClienteCtrl();
+   boolean existe = clienteCtrl.borrar(Integer.parseInt(request.getParameter("idcliente")));
    String mensaje;
 
    if (existe) {
-      response.sendRedirect("listaTipoCliente.jsp");
+      response.sendRedirect("listaCliente.jsp");
       mensaje = "Se creo el tipo cliente";
    } else {
-	  response.sendRedirect("listaTipoCliente.jsp");
+	  response.sendRedirect("listaCliente.jsp");
       mensaje = "Ya hay un tipo cliente con ese id";
    }
 %>

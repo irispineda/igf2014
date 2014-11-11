@@ -28,14 +28,16 @@ public class ClienteDAO {
 		}
 	}
 
-	public void borrar(int idCliente) {
+	public boolean borrar(int idCliente) {
 		try {
 			iniciarTransaccion();
 			Cliente cliente = findByIdCliente(idCliente);
 			s.delete(cliente);
 			finTransaccion();
+			return true;
 		} catch (Exception e) {
 			System.err.println(this + "Ocurrio un error " + e.getMessage());
+			return false;
 		}
 	}
 
