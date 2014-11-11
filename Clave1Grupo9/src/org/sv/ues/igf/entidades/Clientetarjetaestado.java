@@ -24,7 +24,7 @@ import javax.persistence.Table;
 public class Clientetarjetaestado implements java.io.Serializable {
 
 	private ClientetarjetaestadoId id;
-	private Tarjetacredito tarjetacredito;
+	private Tarjeta tarjetacredito;
 	private Cliente cliente;
 	private BigDecimal balanceActual;
 	private Short numReferencia;
@@ -34,14 +34,14 @@ public class Clientetarjetaestado implements java.io.Serializable {
 	}
 
 	public Clientetarjetaestado(ClientetarjetaestadoId id,
-			Tarjetacredito tarjetacredito, Cliente cliente) {
+			Tarjeta tarjetacredito, Cliente cliente) {
 		this.id = id;
 		this.tarjetacredito = tarjetacredito;
 		this.cliente = cliente;
 	}
 
 	public Clientetarjetaestado(ClientetarjetaestadoId id,
-			Tarjetacredito tarjetacredito, Cliente cliente,
+			Tarjeta tarjetacredito, Cliente cliente,
 			BigDecimal balanceActual, Short numReferencia,
 			Set<Transaccion> transaccions) {
 		this.id = id;
@@ -67,11 +67,11 @@ public class Clientetarjetaestado implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idtarjetacredito", nullable = false, insertable = false, updatable = false)
-	public Tarjetacredito getTarjetacredito() {
+	public Tarjeta getTarjetacredito() {
 		return this.tarjetacredito;
 	}
 
-	public void setTarjetacredito(Tarjetacredito tarjetacredito) {
+	public void setTarjetacredito(Tarjeta tarjetacredito) {
 		this.tarjetacredito = tarjetacredito;
 	}
 

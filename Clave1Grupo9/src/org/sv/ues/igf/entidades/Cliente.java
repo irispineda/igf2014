@@ -43,7 +43,7 @@ public class Cliente implements java.io.Serializable {
 	private Set<Transaccion> transaccions = new HashSet<Transaccion>(0);
 	private Set<Clientetarjetaestado> clientetarjetaestados = new HashSet<Clientetarjetaestado>(
 			0);
-	private Set<Clientetarjeta> clientetarjetas = new HashSet<Clientetarjeta>(0);
+	//private Set<ClienteTargeta> clientetarjetas = new HashSet<ClienteTargeta>(0);
 
 	public Cliente() {
 	}
@@ -51,8 +51,8 @@ public class Cliente implements java.io.Serializable {
 	public Cliente(Tipocliente tipocliente, String nombClient,
 			String apellidoClient, String direccion, String telefono,
 			Date fechaNacimiento, String email, Set<Transaccion> transaccions,
-			Set<Clientetarjetaestado> clientetarjetaestados,
-			Set<Clientetarjeta> clientetarjetas) {
+			Set<Clientetarjetaestado> clientetarjetaestados/*,
+			Set<ClienteTargeta> clientetarjetas*/) {
 		this.tipocliente = tipocliente;
 		this.nombClient = nombClient;
 		this.apellidoClient = apellidoClient;
@@ -62,7 +62,7 @@ public class Cliente implements java.io.Serializable {
 		this.email = email;
 		this.transaccions = transaccions;
 		this.clientetarjetaestados = clientetarjetaestados;
-		this.clientetarjetas = clientetarjetas;
+		//this.clientetarjetas = clientetarjetas;
 	}
 
 	@Id
@@ -149,7 +149,7 @@ public class Cliente implements java.io.Serializable {
 	public void setTransaccions(Set<Transaccion> transaccions) {
 		this.transaccions = transaccions;
 	}
-
+	/*
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cliente")
 	public Set<Clientetarjetaestado> getClientetarjetaestados() {
 		return this.clientetarjetaestados;
@@ -161,12 +161,13 @@ public class Cliente implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cliente")
-	public Set<Clientetarjeta> getClientetarjetas() {
+	public Set<ClienteTargeta> getClientetarjetas() {
 		return this.clientetarjetas;
 	}
 
-	public void setClientetarjetas(Set<Clientetarjeta> clientetarjetas) {
+	public void setClientetarjetas(Set<ClienteTargeta> clientetarjetas) {
 		this.clientetarjetas = clientetarjetas;
 	}
+	*/
 
 }

@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "pais", catalog = "clave1", schema = "")
 @NamedQueries({
 		@NamedQuery(name = "Pais.findAll", query = "SELECT p FROM Pais p"),
-		@NamedQuery(name = "Pais.findByIdpa", query = "SELECT p FROM pais p WHERE p.idpa = :idpa"),
+		@NamedQuery(name = "Pais.findByIdpa", query = "SELECT p FROM Pais p WHERE p.idpa = :idpa"),
 		@NamedQuery(name = "Pais.findByNombrePais", query = "SELECT p FROM Pais p WHERE p.nombrePais = :nombrePais") })
 public class Pais implements Serializable {
 	private Short idpa;

@@ -36,7 +36,7 @@ public class Transaccion implements java.io.Serializable {
 	private Pais pais;
 	private Clientetarjetaestado clientetarjetaestado;
 	private Concepto concepto;
-	private Tarjetacredito tarjetacredito;
+	private Tarjeta tarjetacredito;
 	private Cliente cliente;
 	private Date fechaTransaccion;
 	private Date fechaAplicada;
@@ -52,7 +52,7 @@ public class Transaccion implements java.io.Serializable {
 	}
 
 	public Transaccion(Pais pais, Clientetarjetaestado clientetarjetaestado,
-			Concepto concepto, Tarjetacredito tarjetacredito, Cliente cliente,
+			Concepto concepto, Tarjeta tarjetacredito, Cliente cliente,
 			Date fechaTransaccion, Date fechaAplicada,
 			BigDecimal montoTransaccion, String BCargo, String BAbono) {
 		this.pais = pais;
@@ -114,11 +114,11 @@ public class Transaccion implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idtarjetacredito", insertable = false, updatable = false)
-	public Tarjetacredito getTarjetacredito() {
+	public Tarjeta getTarjetacredito() {
 		return this.tarjetacredito;
 	}
 
-	public void setTarjetacredito(Tarjetacredito tarjetacredito) {
+	public void setTarjetacredito(Tarjeta tarjetacredito) {
 		this.tarjetacredito = tarjetacredito;
 	}
 
