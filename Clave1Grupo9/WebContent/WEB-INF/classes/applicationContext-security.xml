@@ -11,6 +11,7 @@
     <http pattern="/nologin.html" security="none"/>
     <http pattern="/style.css" security="none"/>
     <http pattern="/js/*" security="none"/>
+    <http pattern="/images/*" security="none"/>
     <http>
     	<intercept-url pattern="/index.jsp" access="ROLE_ADMIN,ROLE_USER,ROLE_GUEST"/>
         <intercept-url pattern="/Administracion/Usuarios/**" access="ROLE_ADMIN" />
