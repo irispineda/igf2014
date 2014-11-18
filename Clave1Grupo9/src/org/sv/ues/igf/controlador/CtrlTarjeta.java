@@ -2,20 +2,21 @@ package org.sv.ues.igf.controlador;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import org.sv.ues.igf.entidades.Tarjeta;
+import org.sv.ues.igf.*;
 import org.sv.ues.igf.dao.TarjetaDAO;
+import org.sv.ues.igf.entidades.Tarjeta;
 
 
 
 
 public class CtrlTarjeta {
-	private TarjetaDAO daoDepto = new TarjetaDAO();
+	private TarjetaDAO daotar = new TarjetaDAO();
 
 	public boolean crearTarjeta(String nombreTarjeta, BigDecimal limiteMinimo,
 			BigDecimal limiteMaximo,String Nombre_emisor, Date fechaIngreso, BigDecimal tasaInteres) {
-		if (daoDepto.daTarjetaByNombre(nombreTarjeta) == null) {
+		if (daotar.daTarjetaByNombre(nombreTarjeta) == null) {
 			Tarjeta tarjeta = new Tarjeta(nombreTarjeta, limiteMinimo, limiteMaximo,Nombre_emisor ,fechaIngreso, tasaInteres);
-			daoDepto.guardaActualiza(tarjeta);
+			daotar.guardaActualiza(tarjeta);
 			return true;
 		} else
 			return false;
@@ -23,11 +24,11 @@ public class CtrlTarjeta {
 
 	
 	public boolean eliminarTargeta(String nombreTargeta) {
-		if (daoDepto.daTarjetaByNombre(nombreTargeta) != null) {
+		if (daotar.daTarjetaByNombre(nombreTargeta)!= null) {
 
-			Tarjeta tarjeta = daoDepto.daTarjetaByNombre(nombreTargeta);
+			Tarjeta tarjeta = daotar.daTarjetaByNombre(nombreTargeta);
 					
-			daoDepto.eliminar(tarjeta);
+			daotar.eliminar(tarjeta);
 			return true;
 		} else
 			return false;
@@ -37,8 +38,8 @@ public class CtrlTarjeta {
 	//CtrlProveedor crear metodo que devuelva datos por ID(ESTE ES EL METODO CONSULTAR)
 
 	public Tarjeta daTarjetaById(int idTarjeta){
-			if(daoDepto.daTargetaByIdTargeta(idTarjeta) != null){
-				Tarjeta buscado = daoDepto.daTargetaByIdTargeta(idTarjeta);
+			if(daotar.daTargetaByIdTargeta(idTarjeta) != null){
+				Tarjeta buscado = daotar.daTargetaByIdTargeta(idTarjeta);
 				return buscado;
 			}else{
 				return null;			
@@ -48,8 +49,8 @@ public class CtrlTarjeta {
 
 	public boolean modificarTargeta(String nombreAntiguo,String nombreTarjeta, BigDecimal limiteMinimo,
 			BigDecimal limiteMaximo,String Nombre_emisor, Date fechaIngreso, BigDecimal tasaInteres) {
-		if(daoDepto.daTarjetaByNombre(nombreAntiguo) != null) {
-		Tarjeta tarjeta =daoDepto.daTarjetaByNombre( nombreAntiguo) ;
+		if(daotar.daTarjetaByNombre(nombreAntiguo) != null) {
+		Tarjeta tarjeta =daotar.daTarjetaByNombre( nombreAntiguo) ;
 		
 		tarjeta.setNombreTarjeta(nombreTarjeta) ;
 		tarjeta.setLimiteMinimo(limiteMinimo) ;
@@ -61,7 +62,7 @@ public class CtrlTarjeta {
         
                     
 		
-		daoDepto.guardaActualiza(tarjeta) ;
+		daotar.guardaActualiza(tarjeta) ;
 		return true ;
 		}
 		else
@@ -71,6 +72,6 @@ public class CtrlTarjeta {
 	
 	
 	public Tarjeta daTarjetaByNombre(String nombre) {
-		return daoDepto.daTarjetaByNombre(nombre);
+		return daotar.daTarjetaByNombre(nombre);
 	}
 }
