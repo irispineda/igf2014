@@ -34,7 +34,9 @@
 				<ul>
 					<li><a href="Cliente/listaCliente.jsp">Cliente</a></li>
 					<li><a href="/Clave1Grupo9/TarjetaCredito/creartarjeta.html">Tarjeta de Credito</a></li>
-					
+					<li><a href="/Clave1Grupo9/TarjetaCredito/consultartarjeta.html">consultar</a></li>
+					<li><a href="/Clave1Grupo9/TarjetaCredito/eliminartarjeta.html">eliminar</a></li>
+					<li><a href="/Clave1Grupo9/TarjetaCredito/modificatargeta.html">modificar</a></li>
 				</ul>
 			</li>
 			<li>
