@@ -33,7 +33,8 @@
 				<a href="#">Maestros</a>
 				<ul>
 					<li><a href="Cliente/listaCliente.jsp">Cliente</a></li>
-					<li><a href="#">Tarjeta de Credito</a></li>
+					<li><a href="/Clave1Grupo9/TarjetaCredito/creartarjeta.html">Tarjeta de Credito</a></li>
+					
 				</ul>
 			</li>
 			<li>
