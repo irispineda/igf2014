@@ -1,20 +1,15 @@
 package org.sv.ues.igf.dao;
-
 import org.hibernate.*;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-
 import org.sv.ues.igf.entidades.Tarjeta;
 import org.sv.ues.igf.utilidades.HibernateUtil;
 
 
-import org.sv.ues.igf.utilidades.*;
+
+
 
 public class TarjetaDAO {
 	private HibernateUtil hibernateUtil = new HibernateUtil();
-	private SessionFactory sessionFactory =hibernateUtil.getSessionFactory();
+	private SessionFactory sessionFactory =HibernateUtil.getSessionFactory();
 	private Session sesion;
 	private Transaction tx;
 
