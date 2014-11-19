@@ -36,7 +36,7 @@ public class Transaccion implements java.io.Serializable {
 	private Pais pais;
 	private Clientetarjetaestado clientetarjetaestado;
 	private Concepto concepto;
-	private Tarjeta tarjetacredito;
+	private Tarjetacredito tarjetacredito;
 	private Cliente cliente;
 	private Date fechaTransaccion;
 	private Date fechaAplicada;
@@ -52,7 +52,7 @@ public class Transaccion implements java.io.Serializable {
 	}
 
 	public Transaccion(Pais pais, Clientetarjetaestado clientetarjetaestado,
-			Concepto concepto, Tarjeta tarjetacredito, Cliente cliente,
+			Concepto concepto, Tarjetacredito tarjetacredito, Cliente cliente,
 			Date fechaTransaccion, Date fechaAplicada,
 			BigDecimal montoTransaccion, String BCargo, String BAbono) {
 		this.pais = pais;
@@ -78,7 +78,7 @@ public class Transaccion implements java.io.Serializable {
 		this.idtransaccion = idtransaccion;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idpais")
 	public Pais getPais() {
 		return this.pais;
@@ -88,7 +88,7 @@ public class Transaccion implements java.io.Serializable {
 		this.pais = pais;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumns({
 			@JoinColumn(name = "idtarjetacredito", referencedColumnName = "idtarjetacredito"),
 			@JoinColumn(name = "idcliente", referencedColumnName = "idcliente"),
@@ -102,7 +102,7 @@ public class Transaccion implements java.io.Serializable {
 		this.clientetarjetaestado = clientetarjetaestado;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idconcepto")
 	public Concepto getConcepto() {
 		return this.concepto;
@@ -112,17 +112,17 @@ public class Transaccion implements java.io.Serializable {
 		this.concepto = concepto;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idtarjetacredito", insertable = false, updatable = false)
-	public Tarjeta getTarjetacredito() {
+	public Tarjetacredito getTarjetacredito() {
 		return this.tarjetacredito;
 	}
 
-	public void setTarjetacredito(Tarjeta tarjetacredito) {
+	public void setTarjetacredito(Tarjetacredito tarjetacredito) {
 		this.tarjetacredito = tarjetacredito;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idcliente", insertable = false, updatable = false)
 	public Cliente getCliente() {
 		return this.cliente;

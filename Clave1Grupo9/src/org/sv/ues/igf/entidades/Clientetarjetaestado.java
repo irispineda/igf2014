@@ -65,7 +65,7 @@ public class Clientetarjetaestado implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idtarjetacredito", nullable = false, insertable = false, updatable = false)
 	public Tarjeta getTarjetacredito() {
 		return this.tarjetacredito;
@@ -75,7 +75,7 @@ public class Clientetarjetaestado implements java.io.Serializable {
 		this.tarjetacredito = tarjetacredito;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idcliente", nullable = false, insertable = false, updatable = false)
 	public Cliente getCliente() {
 		return this.cliente;
@@ -103,7 +103,7 @@ public class Clientetarjetaestado implements java.io.Serializable {
 		this.numReferencia = numReferencia;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "clientetarjetaestado")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "clientetarjetaestado")
 	public Set<Transaccion> getTransaccions() {
 		return this.transaccions;
 	}

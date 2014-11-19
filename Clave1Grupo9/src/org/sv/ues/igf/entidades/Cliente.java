@@ -76,7 +76,7 @@ public class Cliente implements java.io.Serializable {
 		this.idcliente = idcliente;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idtipocliente")
 	public Tipocliente getTipocliente() {
 		return this.tipocliente;
@@ -141,7 +141,7 @@ public class Cliente implements java.io.Serializable {
 		this.email = email;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cliente")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "cliente")
 	public Set<Transaccion> getTransaccions() {
 		return this.transaccions;
 	}
@@ -150,7 +150,7 @@ public class Cliente implements java.io.Serializable {
 		this.transaccions = transaccions;
 	}
 	/*
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cliente")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "cliente")
 	public Set<Clientetarjetaestado> getClientetarjetaestados() {
 		return this.clientetarjetaestados;
 	}
@@ -160,7 +160,7 @@ public class Cliente implements java.io.Serializable {
 		this.clientetarjetaestados = clientetarjetaestados;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cliente")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "cliente")
 	public Set<ClienteTargeta> getClientetarjetas() {
 		return this.clientetarjetas;
 	}
