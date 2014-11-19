@@ -12,19 +12,19 @@
     
     <%
         	int idCliente =Integer.parseInt( request.getParameter("idTarjeta"));
-            CtrlClienteTargeta consulta = new CtrlClienteTargeta();
-           ClienteTargeta buscado = consulta.daClienteTargetaById(idCliente);
-            
-            String mensaje="";
-            
-            if(buscado != null){
-            			mensaje += "Codigo: " + buscado.getIdCliente()
-        				+ "<br> fecha de emision: " + buscado.getFecha_Emision()
-        				+ "<br>Limite de credito:" + buscado.getLimite_credito()
-        				+ "<br>puntos targeta:" + buscado.getPuntos_credito();
-            			} else {
-        		mensaje ="Tarjeta no encontrado";
-        	}
+                    CtrlClienteTargeta consulta = new CtrlClienteTargeta();
+                   Clientetarjeta buscado = consulta.daClienteTargetaById(idCliente);
+                    
+                    String mensaje="";
+                    
+                    if(buscado != null){
+                    			mensaje += "Codigo: " + buscado.getIdCliente()
+                				+ "<br> fecha de emision: " + buscado.getFecha_Emision()
+                				+ "<br>Limite de credito:" + buscado.getLimite_credito()
+                				+ "<br>puntos targeta:" + buscado.getPuntos_credito();
+                    			} else {
+                		mensaje ="Tarjeta no encontrado";
+                	}
         %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

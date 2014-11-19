@@ -25,7 +25,7 @@
   <mapping class="org.sv.ues.igf.entidades.Tipocliente"/>
   <mapping class="org.sv.ues.igf.entidades.Tarjeta"/>
   <mapping class="org.sv.ues.igf.entidades.Clientetarjetaestado"/>
-  <mapping class="org.sv.ues.igf.entidades.ClienteTargeta"/>
+  <mapping class="org.sv.ues.igf.entidades.Clientetarjeta"/>
   <mapping class="org.sv.ues.igf.entidades.Tarjetacredito"/>
  </session-factory>
 </hibernate-configuration>

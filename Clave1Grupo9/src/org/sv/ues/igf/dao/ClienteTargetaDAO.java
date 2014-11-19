@@ -3,8 +3,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-
-import org.sv.ues.igf.entidades.ClienteTargeta;
+import org.sv.ues.igf.entidades.Clientetarjeta;
 import org.sv.ues.igf.utilidades.HibernateUtil;
 
 import java.util.Date;
@@ -36,7 +35,7 @@ public class ClienteTargetaDAO {
 		throw new HibernateException("Ocurrió un error en la capa DAO", he);
 	}
 
-	public void guardaActualiza(ClienteTargeta cliente) {
+	public void guardaActualiza(Clientetarjeta cliente) {
 		try {
 			iniciaOperacion();
 			sesion.saveOrUpdate(cliente);
@@ -51,7 +50,7 @@ public class ClienteTargetaDAO {
 	}
 
 	
-	public void eliminar(ClienteTargeta cliente) {
+	public void eliminar(Clientetarjeta cliente) {
 		try {
 			iniciaOperacion();
 			sesion.delete(cliente);
@@ -65,29 +64,29 @@ public class ClienteTargetaDAO {
 		}
 	}
 
-	public ClienteTargeta daclienteByIdPro(int id) {
+	public Clientetarjeta daclienteByIdPro(int id) {
 		sesion = sessionFactory.openSession();
 		Query query = sesion.getNamedQuery("ClienteTargeta.findByIdPro");
 		query.setParameter("idcliente", id);
-		ClienteTargeta cliente = (ClienteTargeta) query.uniqueResult();
+		Clientetarjeta cliente = (Clientetarjeta) query.uniqueResult();
 		sesion.close();
 		return cliente;
 	}
-	public ClienteTargeta daClienteTargetaById(int idCliente){
+	public Clientetarjeta daClienteTargetaById(int idtarjetacredito, int idcliente){
 		sesion = sessionFactory.openSession() ;
-		// Retorna la instancia persistente de la clase por medio del
-		
-		ClienteTargeta id = (ClienteTargeta) sesion.get(ClienteTargeta.class,
-		new Integer(idCliente)) ;
+		Query query = sesion.getNamedQuery("Clientetarjeta.findByID");
+		query.setParameter("id_cliente", idcliente);
+		query.setParameter("id_tarjeta", idtarjetacredito);
+		Clientetarjeta ct = (Clientetarjeta) query.uniqueResult();
 		sesion.close() ;
-		return id ;
+		return null ;
 		}
 	
-	public ClienteTargeta daClienteTargetaByNombre(Date nombre) {
+	public Clientetarjeta daClienteTargetaByNombre(Date nombre) {
 		sesion = sessionFactory.openSession();
 		Query query = sesion.getNamedQuery("ClienteTar.findByNombre");
 		query.setParameter("Fecha_Emision", nombre);
-		ClienteTargeta targeta = (ClienteTargeta) query.uniqueResult();
+		Clientetarjeta targeta = (Clientetarjeta) query.uniqueResult();
 		sesion.close();
 		return targeta;
 	}
