@@ -111,32 +111,41 @@
 	<div id="sitemenu">
 		<h2 class="hide">Sample menu:</h2>
 		<ul>
-			<li><a href="#">Inicio</a></li>
+			<li><a class="current" href="#" onclick="javascript:anchodiv();">Inicio</a></li>
 			<li>
 				<a href="#">Catalogos</a>
 				<ul>
-					<li><a href="#">Tipo de Cliente</a></li>
-					<li><a href="#">Establecimiento</a></li>
-					<li><a href="#">Pais</a></li>
-					<li><a href="#">Transaccion</a></li>
+					<li><a href="/Clave1Grupo9/Cliente/listaTipoCliente.jsp">Tipo de Cliente</a></li>
+					<li><a href="/Clave1Grupo9/Establecimiento/CreaEst.html">Establecimiento</a></li>
+					<li><a href="/Clave1Grupo9/Pais/Creapais.html">Pais</a></li>
+					<li><a href="/Clave1Grupo9/Concepto/Lista.jsp">Concepto</a></li>
 				</ul>
 			</li>
 			<li>
 				<a href="#">Maestros</a>
 				<ul>
-					<li><a href="#">Cliente</a></li>
-					<li><a href="#">Tarjeta de Credito</a></li>
+					<li><a href="/Clave1Grupo9/Cliente/listaCliente.jsp">Cliente</a></li>
+					<li><a href="/Clave1Grupo9/TarjetaCredito/creartarjeta.html">Tarjeta de Credito</a></li>
+					<li><a href="/Clave1Grupo9/TarjetaCredito/consultartarjeta.html">consultar</a></li>
+					<li><a href="/Clave1Grupo9/TarjetaCredito/eliminartarjeta.html">eliminar</a></li>
+					<li><a href="/Clave1Grupo9/TarjetaCredito/modificatargeta.html">modificar</a></li>
 				</ul>
 			</li>
 			<li>
 				<a href="#">Procesos</a>
 				<ul>
 					<li><a href="#">Tarjeta-Cliente</a></li>
-					<li><a class="current" href="#">Transacciones</a></li>
+					<li><a href="/Clave1Grupo9/Transaccion/Lista.jsp">Transaccion</a></li>
 					<li><a href="#">Estado de Cuenta</a></li>
 				</ul>
 			</li>
-			<li class="hide"><a href="#header">Back to top</a></li>
+			<li>
+				<a href="#">Administracion</a>
+				<ul>
+					<li><a href="/Clave1Grupo9/Administracion/Usuarios/Lista.jsp">Usuarios</a></li>
+				</ul>
+			</li>
+			<li><a href="j_spring_security_logout">Cerrar sesión</a></li>
 		</ul>
 	</div>
 	<div id="extras">

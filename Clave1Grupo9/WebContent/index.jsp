@@ -23,7 +23,7 @@
 			<li>
 				<a href="#">Catalogos</a>
 				<ul>
-					<li><a href="Cliente/listaTipoCliente.jsp">Tipo de Cliente</a></li>
+					<li><a href="/Clave1Grupo9/Cliente/listaTipoCliente.jsp">Tipo de Cliente</a></li>
 					<li><a href="/Clave1Grupo9/Establecimiento/CreaEst.html">Establecimiento</a></li>
 					<li><a href="/Clave1Grupo9/Pais/Creapais.html">Pais</a></li>
 					<li><a href="/Clave1Grupo9/Concepto/Lista.jsp">Concepto</a></li>
@@ -32,7 +32,7 @@
 			<li>
 				<a href="#">Maestros</a>
 				<ul>
-					<li><a href="Cliente/listaCliente.jsp">Cliente</a></li>
+					<li><a href="/Clave1Grupo9/Cliente/listaCliente.jsp">Cliente</a></li>
 					<li><a href="/Clave1Grupo9/TarjetaCredito/creartarjeta.html">Tarjeta de Credito</a></li>
 					<li><a href="/Clave1Grupo9/TarjetaCredito/consultartarjeta.html">consultar</a></li>
 					<li><a href="/Clave1Grupo9/TarjetaCredito/eliminartarjeta.html">eliminar</a></li>
@@ -50,7 +50,7 @@
 			<li>
 				<a href="#">Administracion</a>
 				<ul>
-					<li><a href="./Administracion/Usuarios/Lista.jsp">Usuarios</a></li>
+					<li><a href="/Clave1Grupo9/Administracion/Usuarios/Lista.jsp">Usuarios</a></li>
 				</ul>
 			</li>
 			<li><a href="j_spring_security_logout">Cerrar sesión</a></li>
