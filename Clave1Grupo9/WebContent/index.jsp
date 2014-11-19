@@ -26,7 +26,7 @@
 					<li><a href="Cliente/listaTipoCliente.jsp">Tipo de Cliente</a></li>
 					<li><a href="/Clave1Grupo9/Establecimiento/CreaEst.html">Establecimiento</a></li>
 					<li><a href="/Clave1Grupo9/Pais/Creapais.html">Pais</a></li>
-					<li><a href="./Concepto/Lista.jsp">Concepto</a></li>
+					<li><a href="/Clave1Grupo9/Concepto/Lista.jsp">Concepto</a></li>
 				</ul>
 			</li>
 			<li>
@@ -43,7 +43,7 @@
 				<a href="#">Procesos</a>
 				<ul>
 					<li><a href="#">Tarjeta-Cliente</a></li>
-					<li><a href="#">Transacciones</a></li>
+					<li><a href="/Clave1Grupo9/Transaccion/Lista.jsp">Transaccion</a></li>
 					<li><a href="#">Estado de Cuenta</a></li>
 				</ul>
 			</li>
