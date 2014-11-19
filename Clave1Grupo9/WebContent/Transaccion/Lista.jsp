@@ -6,27 +6,20 @@
 	TransaccionCtrl ctrl = new TransaccionCtrl();
 	Transaccion alumno = new Transaccion();
 	List lst = null;
-	
-	String accion = request.getParameter("accion");
-	if (accion == null)
-		lst = ctrl.findByAll();
-	/*else{
-		lst = ctrl.findByParam(request.getParameter("nombre1"),
-											request.getParameter("nombre2"),
-											request.getParameter("apellido1"),
-											request.getParameter("apellido2"),
-											request.getParameter("genero"),
-											request.getParameter("grado"));
-	}*/
-	
 	String mensaje = "";
-	
+	String accion = request.getParameter("accion");
+	if (accion == null){
+		lst = ctrl.findByAll();
+	}
 	mensaje = "<table>"+
 			  	"<thead>"+
-					"<caption>Transaccions <a href='Edit.jsp?idtransaccion=0&accion=nuevo'><img class='iconnew' ></a></caption>"+
+					"<caption>Transacciones <a href='Edit.jsp?idtransaccion=0&accion=nuevo'><img class='iconnew' ></a></caption>"+
 					"<tr>"+
-						"<th>C&oacute;digo</th>"+
-						"<th>Descripci&oacute;n</th>"+
+						"<th>Fecha</th>"+
+						"<th>Cliente</th>"+
+						"<th>No. Tarjeta</th>"+
+						"<th>Monto</th>"+
+						"<th>Concepto</th>"+
 					"</tr>"+
 				"</thead>"+
 				"<tbody>";
@@ -38,11 +31,14 @@
 			transaccion = (Transaccion) lst.get(i); 
 			mensaje += "<tr>"+
 							"<td>"+transaccion.getFechaTransaccion()+"</td>"+
+							"<td>"+transaccion.getCliente().getNombClient()+" "+transaccion.getCliente().getApellidoClient()+"</td>"+
+							"<td>"+transaccion.getTarjetacredito().getNombreTarjeta()+"</td>"+
 							"<td>"+transaccion.getMontoTransaccion()+"</td>"+
+							"<td>"+transaccion.getConcepto().getDescripcion()+"</td>"+
 							"<td><a href='Edit.jsp?idtransaccion="+transaccion.getIdtransaccion()+"&accion=ver'><img class='iconview' ></a></td>"+
 							"<td><a href='Edit.jsp?idtransaccion="+transaccion.getIdtransaccion()+"&accion=edit'><img class='iconedit' ></a></td>"+
 							"<td><a href='Edit.jsp?idtransaccion="+transaccion.getIdtransaccion()+"&accion=borrar'><img class='icondel' ></a></td>"+
-						"</tr>"; 
+						"</tr>";
 		}
 	}
 	mensaje += "</tbody>"+
