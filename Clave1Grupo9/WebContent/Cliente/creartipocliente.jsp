@@ -25,9 +25,6 @@
 		if (existe) {
 			response.sendRedirect("listaTipoCliente.jsp");
 			mensaje = "Se creo el tipo cliente";
-		} else {
-			response.sendRedirect("creartipotliente.jsp");
-			mensaje = "Ya hay un tipo cliente con ese id";
 		}
     }
 %>
